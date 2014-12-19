@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+// ============================================================================
+//
+//   #${1:Title}
+//   -> ${2:Description}
+//
+// ============================================================================
+
+
+
+]]></content>
+  <tabTrigger>//=</tabTrigger>
+  <description>Header comment</description>
+  <scope>source.css, source.scss, source.sass</scope>
+</snippet>

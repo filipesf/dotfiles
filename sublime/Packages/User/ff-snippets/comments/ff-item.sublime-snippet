@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+
+// ----- ${1:Title} ----- //
+
+]]></content>
+  <tabTrigger>//-</tabTrigger>
+  <description>Item title</description>
+  <scope>source.css, source.scss, source.sass</scope>
+</snippet>
