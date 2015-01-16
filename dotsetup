@@ -11,10 +11,4 @@ ln -s `pwd`/gemrc        ~/.gemrc
 ln -s `pwd`/heroku       ~/.heroku
 ln -s `pwd`/netrc        ~/.netrc
 
-ln -s `pwd`/sublime                      ~/Library/Application\ Support/Sublime\ Text\ 3
-ln -s `pwd`/sublime/Backup/              ~/Library/Application\ Support/Sublime\ Text\ 3/Backup
-ln -s `pwd`/sublime/Cache/               ~/Library/Application\ Support/Sublime\ Text\ 3/Cache
-ln -s `pwd`/sublime/Index/               ~/Library/Application\ Support/Sublime\ Text\ 3/Index
-ln -s `pwd`/sublime/Installed\ Packages/ ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-ln -s `pwd`/sublime/Local/               ~/Library/Application\ Support/Sublime\ Text\ 3/Local
-ln -s `pwd`/sublime/Packages/            ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+# ln -s `pwd`/bash/itcss                /usr/bin/itcss
