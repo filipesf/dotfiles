@@ -1,5 +1,5 @@
 {
-  "color_scheme": "Packages/Theme - Solarized/Solarized (dark).tmTheme",
+  "color_scheme": "Packages/Theme - Solarized/Solarized.tmTheme",
   "draw_white_space": "selection",
   "ensure_newline_at_eof_on_save": true,
   "file_exclude_patterns":
@@ -72,10 +72,11 @@
   "scroll_past_end": true,
   "tab_size": 2,
   "tabs_medium": true,
-  "theme": "Solarized Dark.sublime-theme",
+  "theme": "Solarized.sublime-theme",
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": true,
   "word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
+  "draw_shadows": false,
   "word_wrap": true,
   "wrap_width": 80
 }

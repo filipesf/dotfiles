@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>comment</key>
+	<string>Solarized</string>
+	<key>name</key>
+	<string>Solarized</string>
+	<key>settings</key>
+	<array>
+		<dict>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#041B22</string>
+				<key>caret</key>
+				<string>#586E75</string>
+				<key>foreground</key>
+				<string>#586E75</string>
+				<key>invisibles</key>
+				<string>#268BD2</string>
+				<key>selection</key>
+				<string>#002B36</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
