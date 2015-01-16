@@ -1,0 +1,81 @@
+{
+  "color_scheme": "Packages/Theme - Solarized/Solarized (dark).tmTheme",
+  "draw_white_space": "selection",
+  "ensure_newline_at_eof_on_save": true,
+  "file_exclude_patterns":
+  [
+    "*._*",
+    "*.DS_store",
+    "*.gem",
+    "*.gz",
+    "*.jar",
+    "*.sassc",
+    "*.scssc",
+    "*.xap",
+    "*.zip",
+    ".gitkeep",
+    ".keep",
+    "dump.rdb",
+    ".rake_tasks~",
+    "*.o"
+  ],
+  "filename_syntax_settings":
+  [
+    [
+      "\\.scss",
+      "Sass",
+      "i"
+    ],
+    [
+      "\\.sass",
+      "Sass",
+      "i"
+    ]
+  ],
+  "folder_exclude_patterns":
+  [
+    ".svn",
+    ".git",
+    ".keep",
+    ".hg",
+    "CVS",
+    ".sass-cache",
+    "tmp/cache/*",
+    ".bin",
+    ".bundle",
+    ".pygments-cache",
+    ".yardoc",
+    "coverage",
+    "log",
+    "tmp",
+    "build",
+    "pkg"
+  ],
+  "font_face": "Inconsolata",
+  "font_options":
+  [
+    "antialias"
+  ],
+  "font_size": 16,
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "line_padding_bottom": 1,
+  "line_padding_top": 0,
+  "rulers":
+  [
+    80
+  ],
+  "scroll_past_end": true,
+  "tab_size": 2,
+  "tabs_medium": true,
+  "theme": "Solarized Dark.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
+  "word_wrap": true,
+  "wrap_width": 80
+}
