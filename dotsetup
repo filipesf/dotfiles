@@ -49,6 +49,13 @@ if [[ ! -d $heroku  ]]; then
   cp -r sublime/color-schemes/Packages/Theme\ -\ Heroku $heroku
 fi
 
+echo "Setting up Vim..."
+
+ln -s `pwd`/vim ~/.vim
+ln -s `pwd`/vim/colors ~/.vim/colors
+ln -s `pwd`/vim/vimrc ~/.vimrc
+vim +BundleInstall +qall
+
 echo "Setting up Git..."
 
 echo "Adding ignore to root"

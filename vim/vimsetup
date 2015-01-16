@@ -1,6 +1,0 @@
-#!/bin/sh
-
-ln -s `pwd` ~/.vim
-ln -s `pwd`/colors ~/.vim/colors
-ln -s `pwd`/vimrc ~/.vimrc
-vim +BundleInstall +qall
