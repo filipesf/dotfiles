@@ -2,19 +2,19 @@
 
 user=`whoami`
 path="/Users/$user/Library/Application Support/Sublime Text 3"
+
 snippets="$path/Packages/User/ff-snippets"
+
 heroku="$path/Packages/Theme - Heroku"
 solarized="$path/Packages/Theme - Solarized"
 spacegray="$path/Packages/Theme - Spacegray"
-pwdheroku="sublime/color-schemes/Packages/Theme - Heroku"
-pwdsolarized="sublime/color-schemes/Packages/Theme - Solarized"
-pwdspacegray="sublime/color-schemes/Packages/Theme - Spacegray"
 
 echo "Setting up Bash..."
 ln -s `pwd`/bash         ~/.bash
 ln -s `pwd`/bashrc       ~/.bashrc
 ln -s `pwd`/bash_profile ~/.bash_profile
 ln -s `pwd`/profile      ~/.profile
+ln -s `pwd`/aliases      ~/.aliases
 ln -s `pwd`/gemrc        ~/.gemrc
 
 echo "Installing Sublime configs..."
@@ -32,15 +32,42 @@ sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr
 
 echo "Installing Solarized..."
 if [[ ! -d $solarized  ]]; then
-  cp -r $pwdsolarized $solarized
+  cp -r sublime/color-schemes/Packages/Theme\ -\ Solarized $solarized
 fi
 
 echo "Installing Spacegray..."
 if [[ ! -d $spacegray  ]]; then
-  cp -r $pwdspacegray $spacegray
+  cp -r sublime/color-schemes/Packages/Theme\ -\ Spacegray $spacegray
 fi
 
 echo "Installing Heroku..."
 if [[ ! -d $heroku  ]]; then
-  cp -r $pwdheroku $heroku
+  cp -r sublime/color-schemes/Packages/Theme\ -\ Heroku $heroku
 fi
+
+echo "Setup Git..."
+
+echo "Adding ignore to root"
+cat ./git/ignore > ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
+
+echo "Adding attributes to root"
+cat ./git/attributes > ~/.gitattributes
+
+echo "User settings"
+git config --global user.name "Filipe Fernandes"
+git config --global user.email contato@filipefernandes.com.br
+git config --global core.editor "subl -n -w"
+git config --global color.ui true
+git config --global push.default matching
+
+echo "Setting up opediff as default merge tool"
+sudo /usr/bin/xcode-select -switch /Applications/Xcode.app/Contents/Developer/
+
+if [[ ! -d ~/bin ]]; then
+  mkdir ~/bin
+fi
+
+cp ./git/git-diff.sh ~/bin/git-diff.sh
+sudo chmod u+x ~/bin/git-diff.sh
+git config --global diff.external ~/bin/git-diff.sh
