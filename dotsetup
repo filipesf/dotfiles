@@ -1,23 +1,27 @@
 #!/bin/sh
 
+echo "Setting up Bash..."
+
+if [[ ! -d ~/.bash ]]; then
+  mkdir ~/.bash
+fi
+
+ln -s `pwd`/bash/git-aware-prompt ~/.bash/git-aware-prompt
+ln -s `pwd`/bash/bash_profile ~/.bash_profile
+ln -s `pwd`/bash/profile ~/.profile
+ln -s `pwd`/bash/aliases ~/.aliases
+ln -s `pwd`/bash/bashrc ~/.bashrc
+ln -s `pwd`/ruby/gemrc ~/.gemrc
+
+echo "Loading Sublime config files..."
 user=`whoami`
 path="/Users/$user/Library/Application Support/Sublime Text 3"
-
 snippets="$path/Packages/User/ff-snippets"
-
 heroku="$path/Packages/Theme - Heroku"
 solarized="$path/Packages/Theme - Solarized"
 spacegray="$path/Packages/Theme - Spacegray"
 
-echo "Setting up Bash..."
-ln -s `pwd`/bash         ~/.bash
-ln -s `pwd`/bashrc       ~/.bashrc
-ln -s `pwd`/bash_profile ~/.bash_profile
-ln -s `pwd`/profile      ~/.profile
-ln -s `pwd`/aliases      ~/.aliases
-ln -s `pwd`/gemrc        ~/.gemrc
-
-echo "Installing Sublime configs..."
+echo "Setting up Sublime Text..."
 cp -r ./*sublime* ./color-schemes "$path/Packages/User"
 
 echo "Installing snippets..."
@@ -45,7 +49,7 @@ if [[ ! -d $heroku  ]]; then
   cp -r sublime/color-schemes/Packages/Theme\ -\ Heroku $heroku
 fi
 
-echo "Setup Git..."
+echo "Setting up Git..."
 
 echo "Adding ignore to root"
 cat ./git/ignore > ~/.gitignore_global
@@ -61,8 +65,7 @@ git config --global core.editor "subl -n -w"
 git config --global color.ui true
 git config --global push.default matching
 
-echo "Setting up opediff as default merge tool"
-sudo /usr/bin/xcode-select -switch /Applications/Xcode.app/Contents/Developer/
+echo "Setting up git-deff"
 
 if [[ ! -d ~/bin ]]; then
   mkdir ~/bin
