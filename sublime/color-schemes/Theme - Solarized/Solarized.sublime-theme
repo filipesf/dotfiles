@@ -80,12 +80,12 @@
 // TAB BUTTONS
 //
 
-    // Tab close button
+    // Tab close button AQUI
     {
         "class": "tab_close_button",
         "layer0.texture": "Theme - Solarized/Solarized/close.png",
         "layer0.opacity": 0,
-        "layer0.tint": [255, 255, 255] // White
+        "layer0.tint": [42, 161, 142] // White
     },
     {
         "class": "tab_close_button",

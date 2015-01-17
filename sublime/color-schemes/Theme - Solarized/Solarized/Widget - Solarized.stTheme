@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+
+<!--
+==================================================
+| Solarized Dark Color Palette                   |
+--------------------------------------------------
+| Black Pearl   - #041B22 - [4, 27, 34]          |
+| Firefly       - #062127 - [6, 33, 39]          |
+| Daintree      - #002B36 - [0, 43, 54]          |
+| Cutty Sark    - #586E75 - [88, 110, 117]       |
+| Curious Blue  - #268BD2 - [38, 139, 210]       |
+| Jungle Green  - #2AA18E - [42, 161, 142]       |
+| Limeade       - #859900 - [133, 153, 0]        |
+| Pirate Gold   - #B58900 - [181, 137, 0]        |
+| Orange Roughy - #CB4B16 - [203, 75, 22]        |
+| Cerise        - #D33682 - [211, 54, 130]       |
+==================================================
+-->
+
 <dict>
+	<key>author</key>
+	<string>Filipe Fernandes (@filipesf)</string>
 	<key>comment</key>
 	<string>Solarized</string>
 	<key>name</key>
@@ -14,7 +34,7 @@
 				<key>background</key>
 				<string>#041B22</string>
 				<key>caret</key>
-				<string>#586E75</string>
+				<string>#2AA18E</string>
 				<key>foreground</key>
 				<string>#586E75</string>
 				<key>invisibles</key>
