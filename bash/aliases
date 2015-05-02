@@ -1,3 +1,7 @@
+# Fuck this shit!
+alias fucking='sudo'
+
+
 # Sublime shorthand
 alias subl='sublime'
 
@@ -14,17 +18,27 @@ alias sketch='rm Library/Application\ Support/com.bohemiancoding.sketch3/.sketch
 alias sasswatch='sass --watch --sourcemap=none --no-cache'
 alias sassupdate='sass --update --sourcemap=none --no-cache'
 
-
-# Sass Architecture Generator
-alias ff-sass="mkdir settings;cd settings;touch _variables.sass;touch _colors.sass;touch _functions.sass;touch _mixins.sass;cd ../;mkdir base;cd base;touch _normalize.sass;touch _base.sass;touch _typography.sass;cd ../;mkdir structures;cd structures;touch _header.sass;touch _navigation.sass;touch _sidebar.sass;touch _footer.sass;touch _grid.sass;cd ../;mkdir objects;cd objects;touch _buttons.sass;touch _media.sass;cd ../;mkdir components;cd components;touch _buttons.sass;touch _media.sass;cd ../;mkdir replacements;cd replacements;touch _states.sass;touch _helpers.sass;;cd ../;touch main.sass;"
-alias ff-scss="mkdir settings;cd settings;touch _variables.scss;touch _colors.scss;touch _functions.scss;touch _mixins.scss;cd ../;mkdir base;cd base;touch _normalize.scss;touch _base.scss;touch _typography.scss;cd ../;mkdir structures;cd structures;touch _header.scss;touch _navigation.scss;touch _sidebar.scss;touch _footer.scss;touch _grid.scss;cd ../;mkdir objects;cd objects;touch _buttons.scss;touch _media.scss;cd ../;mkdir components;cd components;touch _buttons.scss;touch _media.scss;cd ../;mkdir replacements;cd replacements;touch _states.scss;touch _helpers.scss;cd ../;touch main.scss;"
-
-
 # Remove .DS_Store
 alias rmdstore='find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch'
 
 
-# Enable terminal at Ministry of Health
-alias msproxy='export HTTP_PROXY=http://proxy:80 && export HTTPS_PROXY=http://proxy:80'
-alias msclean='export http_proxy="" && export https_proxy=""'
+# Set proxy
+alias msproxy='
+export http_proxy=http://proxy:80;
+export https_proxy=http://proxy:80;
+npm config set proxy http://proxy:80;
+npm config set https-proxy http://proxy:80;
+git config --global http.proxy http://proxy:80;
+git config --global https.proxy http://proxy:80'
 
+alias msclean='
+export http_proxy="";
+export https_proxy="";
+npm config rm proxy;
+npm config rm https-proxy;
+git config --global --unset http.proxy;
+git config --global --unset https.proxy'
+
+
+# Jekyll New Post
+alias newpost='thor jekyll:new'

@@ -1,5 +1,6 @@
 {
-  "color_scheme": "Packages/Theme - Solarized/Solarized.tmTheme",
+  "color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night-Bright.tmTheme",
+  "draw_shadows": false,
   "draw_white_space": "selection",
   "ensure_newline_at_eof_on_save": true,
   "file_exclude_patterns":
@@ -43,6 +44,7 @@
     "tmp/cache/*",
     ".bin",
     ".bundle",
+    "node_modules",
     ".pygments-cache",
     ".yardoc",
     "coverage",
@@ -56,7 +58,7 @@
   [
     "antialias"
   ],
-  "font_size": 16,
+  "font_size": 18,
   "highlight_line": true,
   "highlight_modified_tabs": true,
   "ignored_packages":
@@ -72,11 +74,10 @@
   "scroll_past_end": true,
   "tab_size": 2,
   "tabs_medium": true,
-  "theme": "Solarized.sublime-theme",
+  "theme": "amCoder Gray.sublime-theme",
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": true,
   "word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
-  "draw_shadows": false,
   "word_wrap": true,
   "wrap_width": 80
 }

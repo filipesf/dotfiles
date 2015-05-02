@@ -5,7 +5,7 @@ find_git_branch() {
     if [[ "$branch" == "HEAD" ]]; then
       branch='detached*'
     fi
-    git_branch="at $txtblu$branch "
+    git_branch="at $txtpur$branch "
   else
     git_branch=""
   fi
