@@ -87,14 +87,14 @@ inoremap jj <esc> " jj to throw you into normal mode from insert mode
 inoremap jk <esc> " jk to throw you into normal mode from insert mode
 
 " Disable arrow keys (hardcore)
-map  <up>    <nop>
-imap <up>    <nop>
-map  <down>  <nop>
-imap <down>  <nop>
-map  <left>  <nop>
-imap <left>  <nop>
-map  <right> <nop>
-imap <right> <nop>
+" map  <up>    <nop>
+" imap <up>    <nop>
+" map  <down>  <nop>
+" imap <down>  <nop>
+" map  <left>  <nop>
+" imap <left>  <nop>
+" map  <right> <nop>
+" imap <right> <nop>
 
 " Ignored files
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
