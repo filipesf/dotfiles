@@ -1,7 +1,6 @@
 #!/bin/sh
 
 echo "Setting up Bash..."
-
 if [[ ! -d ~/.bash ]]; then
   mkdir ~/.bash
 fi
@@ -16,17 +15,15 @@ ln -s `pwd`/ruby/gemrc ~/.gemrc
 echo "Loading Sublime config files..."
 user=`whoami`
 path="/Users/$user/Library/Application Support/Sublime Text 3"
-snippets="$path/Packages/User/ff-snippets"
-heroku="$path/Packages/Theme - Heroku"
-solarized="$path/Packages/Theme - Solarized"
-spacegray="$path/Packages/Theme - Spacegray"
+packages="$path/Packages"
+snippets="$packages/User/ff-snippets"
 
 echo "Setting up Sublime Text..."
 cp -r ./*sublime* ./color-schemes "$path/Packages/User"
 
 echo "Installing snippets..."
 if [[ ! -d $snippets ]]; then
-  cd "$path/Packages/User" && git clone git@github.com:filipesf/ff-snippets.git
+  cd "$packages/User" && git clone git@github.com:filipesf/ff-snippets.git
 else
   cd "$snippets" && git pull
 fi
@@ -34,23 +31,12 @@ fi
 echo "Creating 'subl' symlink..."
 sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
-echo "Installing Solarized..."
-if [[ ! -d $solarized  ]]; then
-  cp -r sublime/color-schemes/Packages/Theme\ -\ Solarized $solarized
-fi
-
-echo "Installing Spacegray..."
-if [[ ! -d $spacegray  ]]; then
-  cp -r sublime/color-schemes/Packages/Theme\ -\ Spacegray $spacegray
-fi
-
-echo "Installing Heroku..."
-if [[ ! -d $heroku  ]]; then
-  cp -r sublime/color-schemes/Packages/Theme\ -\ Heroku $heroku
+echo "Installing Sublime Themes"
+if [[ ! -d $packages  ]]; then
+  cp -r sublime/color-schemes/Packages/* $packages
 fi
 
 echo "Setting up Vim..."
-
 ln -s `pwd`/vim ~/.vim
 ln -s `pwd`/vim/colors ~/.vim/colors
 ln -s `pwd`/vim/vimrc ~/.vimrc
