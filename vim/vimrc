@@ -8,22 +8,32 @@ call vundle#begin()
 Plugin 'gmarik/vundle.vim'
 Plugin 'tpope/vim-bundler'
 
+Plugin 'tomtom/tlib_vim'
+Plugin 'marcweber/vim-addon-mw-utils'
+Plugin 'msanders/snipMate.vim'
+
 Plugin 'jayferd/ragel.vim'
 Plugin 'othree/html5.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
 
 Plugin 'godlygeek/tabular'
+Plugin 'vim-scripts/Align'
 
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-scripts/OmniCppComplete'
 Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'itchyny/lightline.vim'
 
 call vundle#end()
 filetype plugin indent on
+
+" Set UTF-8 Encoding
+set encoding=utf-8
+set termencoding=utf-8
 
 syntax enable     " Syntax
 
@@ -57,14 +67,61 @@ if exists("+colorcolumn")
   set colorcolumn=81
 endif
 
+" Set 256 Colors
+set t_Co=256
+set term=xterm-256color
+let base16colorspace=256
+
 " Color Scheme
 set background=dark
-colorscheme railscasts
-set gfn=Inconsolata:h18
+colorscheme base16-ocean
+
+" Typography
+set guifont=Inconsolata\ for\ Powerline
+set fillchars+=stl:\ ,stlnc:\
+let g:Powerline_symbols = 'fancy'
 
 " Splits
 set splitbelow
 set splitright
+
+" Powerline config
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'modified': 'MyModified',
+      \   'readonly': 'MyReadonly',
+      \   'fugitive': 'MyFugitive',
+      \   'filename': 'MyFilename'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+
+function! MyModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
+endfunction
+
+function! MyFugitive()
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? ' '._ : ''
+  endif
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+       \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
 
 " CSS Autocomplete
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS

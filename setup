@@ -1,15 +1,16 @@
 #!/bin/sh
 
-echo "Setting up Bash..."
-if [[ ! -d ~/.bash ]]; then
-  mkdir ~/.bash
-fi
+echo "Installing Homebrew..."
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-ln -s `pwd`/bash/git-aware-prompt ~/.bash/git-aware-prompt
-ln -s `pwd`/bash/bash_profile ~/.bash_profile
-ln -s `pwd`/bash/profile ~/.profile
-ln -s `pwd`/bash/aliases ~/.aliases
-ln -s `pwd`/bash/bashrc ~/.bashrc
+echo "Installing Oh My ZSH..."
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
+echo "Creating shell symlinks..."
+ln -s `pwd`/shell/256colors ~/.config
+ln -s `pwd`/shell/aliases ~/.aliases
+ln -s `pwd`/shell/bashrc ~/.bashrc
+ln -s `pwd`/shell/zshrc ~/.zshrc
 ln -s `pwd`/ruby/gemrc ~/.gemrc
 
 echo "Loading Sublime config files..."
@@ -44,7 +45,7 @@ vim +BundleInstall +qall
 
 echo "Setting up Git..."
 
-echo "Adding ignore to root"
+echo "Adding gitignore to root"
 cat ./git/ignore > ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
