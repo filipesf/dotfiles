@@ -76,6 +76,7 @@ let base16colorspace=256
 set background=dark
 colorscheme base16-ocean
 
+
 " Typography
 set guifont=Inconsolata\ for\ Powerline
 set fillchars+=stl:\ ,stlnc:\
@@ -87,7 +88,7 @@ set splitright
 
 " Powerline config
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'default',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
@@ -103,7 +104,7 @@ let g:lightline = {
       \ }
 
 function! MyModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '✗' : &modifiable ? '' : '-'
 endfunction
 
 function! MyReadonly()
