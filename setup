@@ -1,41 +1,18 @@
 #!/bin/sh
 
+if [[ ! -d ~/bin ]]; then
+  mkdir ~/bin
+fi
+
 echo "Installing Homebrew..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-echo "Installing Oh My ZSH..."
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-
-echo "Creating shell symlinks..."
-ln -s `pwd`/shell/256colors ~/.config
+echo "Creating symlinks..."
+ln -s `pwd`/shell/config ~/.config
 ln -s `pwd`/shell/aliases ~/.aliases
 ln -s `pwd`/shell/bashrc ~/.bashrc
 ln -s `pwd`/shell/zshrc ~/.zshrc
 ln -s `pwd`/ruby/gemrc ~/.gemrc
-
-echo "Loading Sublime config files..."
-user=`whoami`
-path="/Users/$user/Library/Application Support/Sublime Text 3"
-packages="$path/Packages"
-snippets="$packages/User/ff-snippets"
-
-echo "Setting up Sublime Text..."
-cp -r ./*sublime* ./color-schemes "$path/Packages/User"
-
-echo "Installing snippets..."
-if [[ ! -d $snippets ]]; then
-  cd "$packages/User" && git clone git@github.com:filipesf/ff-snippets.git
-else
-  cd "$snippets" && git pull
-fi
-
-echo "Creating 'subl' symlink..."
-sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
-
-echo "Installing Sublime Themes"
-if [[ ! -d $packages  ]]; then
-  cp -r sublime/color-schemes/Packages/* $packages
-fi
 
 echo "Setting up Vim..."
 ln -s `pwd`/vim ~/.vim
@@ -43,14 +20,18 @@ ln -s `pwd`/vim/colors ~/.vim/colors
 ln -s `pwd`/vim/vimrc ~/.vimrc
 vim +BundleInstall +qall
 
+echo "Setting up Sublime..."
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+ln -s `pwd`/sublime/Preferences.sublime-settings "/Users/`whoami`/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+ln -s `pwd`/sublime/Default\ \(OSX\).sublime-keymap "/Users/`whoami`/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap"
+
 echo "Setting up Git..."
-
-echo "Adding gitignore to root"
 cat ./git/ignore > ~/.gitignore_global
-git config --global core.excludesfile ~/.gitignore_global
-
-echo "Adding attributes to root"
 cat ./git/attributes > ~/.gitattributes
+git config --global core.excludesfile ~/.gitignore_global
+cp ./git/git-diff.sh ~/bin/git-diff.sh
+sudo chmod u+x ~/bin/git-diff.sh
+git config --global diff.external ~/bin/git-diff.sh
 
 echo "User settings"
 git config --global user.name "Filipe Fernandes"
@@ -59,12 +40,9 @@ git config --global core.editor "subl -n -w"
 git config --global color.ui true
 git config --global push.default matching
 
-echo "Setting up git-deff"
+echo "Installing Oh My ZSH..."
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
-if [[ ! -d ~/bin ]]; then
-  mkdir ~/bin
-fi
-
-cp ./git/git-diff.sh ~/bin/git-diff.sh
-sudo chmod u+x ~/bin/git-diff.sh
-git config --global diff.external ~/bin/git-diff.sh
+echo "Installing You Tube Downloader..."
+sudo curl https://yt-dl.org/downloads/2015.06.15/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl

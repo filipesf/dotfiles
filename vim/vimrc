@@ -5,20 +5,26 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Bundles
-Plugin 'gmarik/vundle.vim'
+" Plugin 'gmarik/Vundle.vim'
+
 Plugin 'tpope/vim-bundler'
+Plugin 'scrooloose/nerdtree'
 
 Plugin 'tomtom/tlib_vim'
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'msanders/snipMate.vim'
+Plugin 'tomtom/tcomment_vim'
 
 Plugin 'jayferd/ragel.vim'
 Plugin 'othree/html5.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
+Plugin 'plasticboy/vim-markdown'
 
 Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/Align'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'maksimr/vim-jsbeautify'
 
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-scripts/OmniCppComplete'
@@ -74,11 +80,11 @@ let base16colorspace=256
 
 " Color Scheme
 set background=dark
-colorscheme base16-ocean
+" colorscheme seti
 
 
 " Typography
-set guifont=Inconsolata\ for\ Powerline
+set guifont=Inconsolata\ for\ Powerline:h18
 set fillchars+=stl:\ ,stlnc:\
 let g:Powerline_symbols = 'fancy'
 
@@ -88,7 +94,7 @@ set splitright
 
 " Powerline config
 let g:lightline = {
-      \ 'colorscheme': 'default',
+      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
@@ -127,6 +133,16 @@ endfunction
 " CSS Autocomplete
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
+" Emmet just for HTML & CSS
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+" Change Emmet trigger to Tab
+let g:user_emmet_expandabbr_key = '<tab>'
+
+" Remove underline from HTML files
+let html_no_rendering=1
+
 " Start scrolling slightly before the cursor reaches an edge
 set scrolloff=3
 set sidescrolloff=5
@@ -141,8 +157,21 @@ set whichwrap=h,l,b,<,>,~,[,]
 " Resize splits when the window is resized
 autocmd VimResized * exe "normal! \<c-w>="
 
-inoremap jj <esc> " jj to throw you into normal mode from insert mode
-inoremap jk <esc> " jk to throw you into normal mode from insert mode
+" Front-end Beautify
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+" jj and jk to throw you into normal mode from insert mode
+inoremap jj <esc>
+noremap jk <esc>
+
+" Toggle comments
+map  <Leader>_b <c-/>
+imap <Leader>_b <c-/>
+
+" Toggle NERDTree
+map <c-b> :NERDTreeToggle<CR>
 
 " Disable arrow keys (hardcore)
 " map  <up>    <nop>

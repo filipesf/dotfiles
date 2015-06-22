@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+=o-$1(\$extend: false)
+  @if \$extend == extend
+    @extend %o-$1
+  @else
+    ${2://...}
+
+%o-$1
+  +o-$1($3)
+]]></content>
+  <tabTrigger>oo</tabTrigger>
+  <description>New Sass object</description>
+  <scope>source.sass</scope>
+</snippet>
