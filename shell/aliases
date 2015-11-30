@@ -41,4 +41,4 @@ git config --global --unset https.proxy'
 
 
 # Jekyll New Post
-alias newpost='thor jekyll:new'
+alias newpost='thor post:new'
