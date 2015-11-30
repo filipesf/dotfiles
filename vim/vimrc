@@ -80,7 +80,7 @@ let base16colorspace=256
 
 " Color Scheme
 set background=dark
-" colorscheme seti
+colorscheme base16-ocean
 
 
 " Typography
