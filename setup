@@ -23,6 +23,7 @@ vim +BundleInstall +qall
 echo "Setting up Sublime..."
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
 ln -s `pwd`/sublime/Preferences.sublime-settings "/Users/`whoami`/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+ln -s `pwd`/sublime/Package\ Control.sublime-settings "/Users/`whoami`/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings"
 ln -s `pwd`/sublime/Default\ \(OSX\).sublime-keymap "/Users/`whoami`/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap"
 
 echo "Setting up Git..."
