@@ -52,7 +52,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Users/filipe/.rvm/gems/ruby-2.1.5/bin:/Users/filipe/.rvm/gems/ruby-2.1.5@global/bin:/Users/filipe/.rvm/rubies/ruby-2.1.5/bin:/Applications/Postgres.app/Contents/MacOS/bin:/Users/filipe/.rbenv/bin:/opt/subversion/bin:/usr/local/heroku/bin:/usr/local/bin/git:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/Users/filipe/.rvm/bin"
+# export PATH="/Users/filipe/.rvm/gems/ruby-2.1.5/bin:/Users/filipe/.rvm/gems/ruby-2.1.5@global/bin:/Users/filipe/.rvm/rubies/ruby-2.1.5/bin:/Applications/Postgres.app/Contents/MacOS/bin:/Users/filipe/.rbenv/bin:/opt/subversion/bin:/usr/local/heroku/bin:/usr/local/bin/git:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/Users/filipe/.rvm/bin"
 
 # export PATH="$HOME/.node/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
@@ -89,3 +89,5 @@ source $ZSH/oh-my-zsh.sh
 # Base16 Shell
 # BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
