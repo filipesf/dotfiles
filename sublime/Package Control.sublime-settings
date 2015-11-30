@@ -1,0 +1,36 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AlignTab",
+		"BracketHighlighter",
+		"CSScomb",
+		"CSSLint",
+		"EditorConfig",
+		"Emmet",
+		"GitGutter",
+		"Gulp",
+		"HTMLBeautify",
+		"Jade",
+		"Jade Snippets",
+		"JavaScript & NodeJS Snippets",
+		"Javascript Beautify",
+		"JavaScript Snippets",
+		"jQuery",
+		"JSHint",
+		"Package Control",
+		"php-snippets",
+		"Ruby Slim",
+		"Sass",
+		"SASS Snippets",
+		"SassBeautify",
+		"SideBarEnhancements",
+		"Syntax Highlighting for Sass",
+		"Theme - Spacegray",
+		"VimL",
+		"WordPress"
+	]
+}
