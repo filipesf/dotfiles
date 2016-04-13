@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"AlignTab",
+		"AngularJS",
 		"BracketHighlighter",
 		"CSSLint",
 		"EditorConfig",
@@ -29,6 +30,7 @@
 		"Package Control",
 		"PHP-Twig",
 		"PhpSimpleRefactor",
+		"React Templates",
 		"Ruby Slim",
 		"Sass",
 		"SASS Snippets",
@@ -36,7 +38,9 @@
 		"SideBarEnhancements",
 		"Syntax Highlighting for Sass",
 		"Theme - Spacegray",
+		"TypeScript",
 		"VimL",
+		"WakaTime",
 		"WordPress",
 		"World of Warcraft TOC file Syntax"
 	]
