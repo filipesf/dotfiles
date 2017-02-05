@@ -2,46 +2,30 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"Package Control"
 	],
 	"installed_packages":
 	[
 		"AlignTab",
-		"AngularJS",
 		"BracketHighlighter",
-		"CSSLint",
 		"EditorConfig",
 		"Emmet",
-		"Foundation 5 Snippets",
 		"GitGutter",
 		"Gulp",
+		"HTML Underscore Syntax",
 		"HTML-CSS-JS Prettify",
-		"HTMLBeautify",
-		"Jade",
-		"Jade Snippets",
-		"JavaScript & NodeJS Snippets",
 		"Javascript Beautify",
 		"JavaScript Completions",
-		"JavaScript Console",
 		"JavaScript Snippets",
-		"jQuery",
-		"JSHint",
-		"LuaAutocomplete",
-		"OpenResty lua snippets",
+		"Jekyll",
 		"Package Control",
-		"PHP-Twig",
-		"PhpSimpleRefactor",
-		"React Templates",
-		"Ruby Slim",
 		"Sass",
 		"SASS Snippets",
 		"SassBeautify",
-		"SideBarEnhancements",
 		"Syntax Highlighting for Sass",
-		"Theme - Spacegray",
 		"TypeScript",
 		"VimL",
 		"WakaTime",
-		"WordPress",
-		"World of Warcraft TOC file Syntax"
+		"WordPress"
 	]
 }

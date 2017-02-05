@@ -1,6 +1,5 @@
 [
   { "keys": ["super+b"], "command": "toggle_side_bar" },
-  { "keys": ["super+shift+b"], "command": "build" },
   { "keys": ["alt+up"], "command": "swap_line_up" },
   { "keys": ["alt+down"], "command": "swap_line_down" }
 ]
