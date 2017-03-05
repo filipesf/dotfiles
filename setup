@@ -3,28 +3,34 @@
 echo "Installing Homebrew..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+echo "Installing Oh My ZSH..."
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo "Installing You Tube Downloader..."
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
+
 echo "Creating symlinks..."
-ln -s "`pwd`/shell/config" "/Users/`whoami`/.config"
-ln -s "`pwd`/shell/aliases" "/Users/`whoami`/.aliases"
-ln -s "`pwd`/shell/zshrc" "/Users/`whoami`/.zshrc"
-ln -s "`pwd`/ruby/gemrc" "/Users/`whoami`/.gemrc"
+rm -rf /Users/`whoami`/.zshrc
+ln -s `pwd`/shell/zshrc /Users/`whoami`/.zshrc
+ln -s `pwd`/shell/config /Users/`whoami`/.config
+ln -s `pwd`/shell/aliases /Users/`whoami`/.aliases
+ln -s `pwd`/ruby/gemrc /Users/`whoami`/.gemrc
 
 echo "Setting up Vim..."
-ln -s "`pwd`/vim" "/Users/`whoami`/.vim"
-vim +BundleInstall +qall
+ln -s `pwd`/vim /Users/`whoami`/.vim
+ln -s `pwd`/vim/.vimrc /Users/`whoami`/.vimrc
+vim +PluginInstall +qall
 
 echo "Setting up Sublime..."
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"
-ln -s "`pwd`/sublime/Preferences.sublime-settings" "/Users/`whoami`/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
-ln -s "`pwd`/sublime/Package\ Control.sublime-settings" "/Users/`whoami`/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings"
-ln -s "`pwd`/sublime/Default\ \(OSX\).sublime-keymap" "/Users/`whoami`/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap"
-ln -s "`pwd`/sublime/colors/Seti_UI" "/Users/`whoami`/Library/Application Support/Sublime Text 3/Packages/User/Seti_UI"
-ln -s "`pwd`/sublime/colors/Solarbeam" "/Users/`whoami`/Library/Application Support/Sublime Text 3/Packages/User/Solarbeam"
-ln -s "`pwd`/sublime/colors/Spacegray" "/Users/`whoami`/Library/Application Support/Sublime Text 3/Packages/User/Spacegray"
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+ln -s `pwd`/sublime/Preferences.sublime-settings /Users/`whoami`/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+ln -s `pwd`/sublime/Package\ Control.sublime-settings /Users/`whoami`/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
+ln -s `pwd`/sublime/Default\ \(OSX\).sublime-keymap /Users/`whoami`/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ (OSX).sublime-keymap
 
 echo "Setting up Git..."
-ln -s "`pwd`/git/ignore" > "/Users/`whoami`/.gitignore_global"
-git config --global core.excludesfile "/Users/`whoami`/.gitignore_global"
+ln -s `pwd`/git/ignore > /Users/`whoami`/.gitignore_global
+git config --global core.excludesfile /Users/`whoami`/.gitignore_global
 
 echo "Git user settings"
 git config --global user.name "Filipe Fernandes"
@@ -32,10 +38,3 @@ git config --global user.email me@filipesf.com.br
 git config --global core.editor "subl -n -w"
 git config --global push.default simple
 git config --global color.ui true
-
-echo "Installing Oh My ZSH..."
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-echo "Installing You Tube Downloader..."
-sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-sudo chmod a+rx /usr/local/bin/youtube-dl

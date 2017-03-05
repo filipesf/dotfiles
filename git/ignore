@@ -1,4 +1,22 @@
-# Packages
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*.css
+*.diff
+*.err
+*.lock
+*.log
+*.map
+*.orig
+*.rej
+*.swn
+*.swo
+*.swp
+*.tmp
+.*/
+._*
+*~
 *.7z
 *.dmg
 *.gz
@@ -7,15 +25,3 @@
 *.rar
 *.tar
 *.zip
-
-# Compiled sources
-*.dll
-
-# OS stuff
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
