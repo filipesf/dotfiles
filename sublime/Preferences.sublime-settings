@@ -1,88 +1,89 @@
 {
-	"color_scheme": "Packages/User/Seti_UI/Seti.tmTheme",
-	"draw_shadows": false,
-	"draw_white_space": "selection",
-	"ensure_newline_at_eof_on_save": true,
-	"file_exclude_patterns":
-	[
-		"*._*",
-		"*.DS_store",
-		"*.pyc",
-		"*.gem",
-		"*.map",
-		"*.gz",
-		"*.jar",
-		"*.sassc",
-		"*.scssc",
-		"*.xap",
-		"*.zip",
-		"*.git",
-		".gitkeep",
-		".keep",
-		"dump.rdb",
-		".rake_tasks~",
-		"*.o"
-	],
-	"filename_syntax_settings":
-	[
-		[
-			"\\.scss",
-			"Sass",
-			"i"
-		],
-		[
-			"\\.sass",
-			"Sass",
-			"i"
-		]
-	],
-	"folder_exclude_patterns":
-	[
-		".svn",
-		".git",
-		".vagrant",
-		".keep",
-		".idea",
-		".hg",
-		"CVS",
-		".sass-cache",
-		"tmp/cache/*",
-		".bin",
-		".bundle",
-		"node_modules",
-		".pygments-cache",
-		".yardoc",
-		"coverage",
-		"log",
-		"tmp",
-		"pkg"
-	],
-	"font_face": "Inconsolata for Powerline",
-	"font_options":
-	[
-		"antialias"
-	],
-	"font_size": 20,
-	"highlight_line": true,
-	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"line_padding_bottom": 2,
-	"line_padding_top": 2,
-	"overlay_scroll_bars": "enabled",
-	"rulers":
-	[
-		-1,
-		80
-	],
-	"scroll_past_end": true,
-	"tab_size": 2,
-	"tabs_medium": true,
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
-	"word_wrap": false,
-	"wrap_width": 80
+  "color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+  "draw_shadows": false,
+  "draw_white_space": "selection",
+  "ensure_newline_at_eof_on_save": true,
+  "file_exclude_patterns":
+  [
+    "*._*",
+    "*.DS_store",
+    "*.pyc",
+    "*.gem",
+    "*.map",
+    "*.gz",
+    "*.jar",
+    "*.sassc",
+    "*.scssc",
+    "*.xap",
+    "*.zip",
+    "*.git",
+    ".gitkeep",
+    ".keep",
+    "dump.rdb",
+    ".rake_tasks~",
+    "*.o"
+  ],
+  "filename_syntax_settings":
+  [
+    [
+      "\\.scss",
+      "Sass",
+      "i"
+    ],
+    [
+      "\\.sass",
+      "Sass",
+      "i"
+    ]
+  ],
+  "folder_exclude_patterns":
+  [
+    ".svn",
+    ".git",
+    ".vagrant",
+    ".keep",
+    ".idea",
+    ".hg",
+    "CVS",
+    ".sass-cache",
+    "tmp/cache/*",
+    ".bin",
+    ".bundle",
+    "node_modules",
+    ".pygments-cache",
+    ".yardoc",
+    "coverage",
+    "log",
+    "tmp",
+    "pkg"
+  ],
+  "font_face": "Inconsolata for Powerline",
+  "font_options":
+  [
+    "antialias"
+  ],
+  "font_size": 20,
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "line_padding_bottom": 2,
+  "line_padding_top": 2,
+  "overlay_scroll_bars": "enabled",
+  "rulers":
+  [
+    -1,
+    80
+  ],
+  "scroll_past_end": true,
+  "tab_size": 2,
+  "tabs_medium": true,
+  "theme": "Spacegray.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
+  "word_wrap": false,
+  "wrap_width": 80
 }
