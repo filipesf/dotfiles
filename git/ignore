@@ -15,6 +15,7 @@ Thumbs.db
 *.swp
 *.tmp
 .*/
+.netrwhist
 ._*
 *~
 *.7z

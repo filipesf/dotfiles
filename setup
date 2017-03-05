@@ -29,7 +29,7 @@ ln -s `pwd`/sublime/Package\ Control.sublime-settings /Users/`whoami`/Library/Ap
 ln -s `pwd`/sublime/Default\ \(OSX\).sublime-keymap /Users/`whoami`/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ (OSX).sublime-keymap
 
 echo "Setting up Git..."
-ln -s `pwd`/git/ignore > /Users/`whoami`/.gitignore_global
+ln -s `pwd`/git/ignore /Users/`whoami`/.gitignore_global
 git config --global core.excludesfile /Users/`whoami`/.gitignore_global
 
 echo "Git user settings"
