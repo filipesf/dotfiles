@@ -75,7 +75,7 @@ let base16colorspace=256
 
 "Color Scheme
 set background=dark
-colorscheme base16-ocean
+colorscheme base16-seti
 
 "Typography
 set guifont=Inconsolata\ for\ Powerline:h18

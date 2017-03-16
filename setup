@@ -15,7 +15,6 @@ rm -rf /Users/`whoami`/.zshrc
 ln -s `pwd`/shell/zshrc /Users/`whoami`/.zshrc
 ln -s `pwd`/shell/config /Users/`whoami`/.config
 ln -s `pwd`/shell/aliases /Users/`whoami`/.aliases
-ln -s `pwd`/ruby/gemrc /Users/`whoami`/.gemrc
 
 echo "Setting up Vim..."
 ln -s `pwd`/vim /Users/`whoami`/.vim
@@ -34,7 +33,7 @@ git config --global core.excludesfile /Users/`whoami`/.gitignore_global
 
 echo "Git user settings"
 git config --global user.name "Filipe Fernandes"
-git config --global user.email me@filipesf.com.br
+git config --global user.email me@filipesf.com
 git config --global core.editor "subl -n -w"
 git config --global push.default simple
 git config --global color.ui true
