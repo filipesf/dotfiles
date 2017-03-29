@@ -63,10 +63,12 @@ set expandtab
 set number
 set numberwidth=5
 
-"Limit line-length to 80 columns by highlighting col 81 onward
-if exists("+colorcolumn")
-  set colorcolumn=81
-endif
+"Force the cursor onto a new line after 80 characters
+set colorcolumn=80
+"However, in Git commit messages, let’s make it 72 characters
+autocmd FileType gitcommit set textwidth=72
+"Colour the 81st (or 73rd) column so that we don’t type over our limit
+set colorcolumn=+1
 
 "Set 256 Colors
 set t_Co=256
