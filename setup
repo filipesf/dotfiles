@@ -6,10 +6,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 echo "Installing Oh My ZSH..."
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-echo "Installing You Tube Downloader..."
-sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-sudo chmod a+rx /usr/local/bin/youtube-dl
-
 echo "Creating symlinks..."
 rm -rf ~/.zshrc
 ln -s `pwd`/shell/zshrc ~/.zshrc
@@ -19,6 +15,7 @@ ln -s `pwd`/shell/aliases ~/.aliases
 echo "Setting up Git..."
 ln -s `pwd`/git/gitconfig ~/.gitconfig
 ln -s `pwd`/git/gitignore ~/.gitignore
+ln -s `pwd`/git/gitcommit ~/.gitcommit
 
 echo "Setting up Vim..."
 ln -s `pwd`/vim ~/.vim
