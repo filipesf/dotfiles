@@ -1,6 +1,6 @@
 [user]
-	name = Filipe Fernandes
-	email = me@filipesf.com
+  name = Filipe Fernandes
+  email = me@filipesf.com
 [color]
   diff = auto
   status = auto
@@ -38,9 +38,9 @@
   find = "!git grep --break -C1"
 [core]
   editor = subl
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore
 [push]
-	default = current
+  default = current
 [github]
   user = filipesf
 [gitlab]
