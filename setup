@@ -20,6 +20,7 @@ ln -s `pwd`/git/gitcommit ~/.gitcommit
 echo "Setting up Vim..."
 ln -s `pwd`/vim ~/.vim
 ln -s `pwd`/vim/vimrc ~/.vimrc
+ln -s `pwd`/vim/editorconfig ~/.editorconfig
 vim +PluginInstall +qall
 
 echo "Setting up Sublime..."
