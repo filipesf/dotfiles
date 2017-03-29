@@ -37,7 +37,7 @@
   # Empty line between results from different files.
   find = "!git grep --break -C1"
 [core]
-  editor = subl
+  editor = vim
   excludesfile = ~/.gitignore
 [commit]
   template = ~/.gitcommit
