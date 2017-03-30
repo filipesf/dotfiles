@@ -9,7 +9,7 @@ filetype off
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'wakatime/vim-wakatime'
 Plugin 'tomtom/tlib_vim'
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'msanders/snipMate.vim'
@@ -64,7 +64,7 @@ set number
 set numberwidth=5
 
 "Force the cursor onto a new line after 80 characters
-set colorcolumn=80
+set textwidth=80
 "However, in Git commit messages, let’s make it 72 characters
 autocmd FileType gitcommit set textwidth=72
 "Colour the 81st (or 73rd) column so that we don’t type over our limit
@@ -165,9 +165,6 @@ noremap jk <esc>
 "Toggle comments
 map  <Leader>_b <c-/>
 imap <Leader>_b <c-/>
-
-"Toggle NERDTree
-map <c-b> :NERDTreeToggle<CR>
 
 "Disable arrow keys (hardcore)
 "map  <up>    <nop>
