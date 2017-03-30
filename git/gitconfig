@@ -20,6 +20,7 @@
   # Better date formats in logs
   date = rfc
 [alias]
+  ad = add
   st = status
   ci = commit
   br = branch
