@@ -10,6 +10,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'wakatime/vim-wakatime'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'elzr/vim-json'
 Plugin 'tomtom/tlib_vim'
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'msanders/snipMate.vim'
