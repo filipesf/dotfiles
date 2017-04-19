@@ -2,30 +2,39 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"Package Control"
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"AlignTab",
+		"Base16 Color Schemes",
 		"BracketHighlighter",
+		"CSS Snippets",
+		"CSScomb",
 		"EditorConfig",
 		"Emmet",
+		"ff-snippets",
+		"Git Config",
 		"GitGutter",
-		"Gulp",
+		"HTML Mustache",
 		"HTML Underscore Syntax",
 		"HTML-CSS-JS Prettify",
-		"Javascript Beautify",
 		"JavaScript Completions",
 		"JavaScript Snippets",
-		"Jekyll",
 		"Package Control",
 		"Sass",
 		"SASS Snippets",
-		"SassBeautify",
+		"SCSS",
+		"SCSS Snippets",
+		"Seti_UI",
+		"SideBarEnhancements",
 		"Syntax Highlighting for Sass",
-		"TypeScript",
 		"VimL",
 		"WakaTime",
 		"WordPress"
+	],
+	"repositories":
+	[
+		"https://github.com/filipesf/ff-snippets"
 	]
 }

@@ -1,0 +1,10 @@
+{
+	"extensions":
+	[
+		".gitconfig",
+		"gitcommit",
+		"gitconfig",
+		".gitmodules",
+		"config"
+	]
+}
