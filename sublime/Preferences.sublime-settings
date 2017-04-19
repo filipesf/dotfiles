@@ -5,15 +5,16 @@
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
-		".swp",
-		".swo",
-		".netrwhist",
-		".gitkeep",
-		".DS_Store"
-	],
-	"folder_exclude_patterns":
-	[
 		".git",
+    ".swp",
+    ".swo",
+    ".netrwhist",
+    ".gitkeep",
+    ".DS_Store"
+  ],
+  "folder_exclude_patterns":
+  [
+    ".git",
 		".svn",
 		".sass-cache",
 		"node_modules",
