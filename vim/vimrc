@@ -39,7 +39,6 @@ set encoding=utf-8
 set termencoding=utf-8
 
 syntax enable     "Syntax
-
 set laststatus=2  "Status bar
 set shiftround    "Round indent to nearest multiple of 2
 set nowrap        "No line-wrapping
@@ -77,14 +76,10 @@ set t_Co=256
 set term=xterm-256color
 let base16colorspace=256
 
-"Color Scheme
+"Theme
 set background=dark
 colorscheme base16-dracula
-
-"Typography
 set guifont=Inconsolata\ for\ Powerline:h18
-set fillchars+=stl:\ ,stlnc:\
-let g:Powerline_symbols = 'fancy'
 
 "Splits
 set splitbelow
@@ -92,7 +87,7 @@ set splitright
 
 "Powerline config
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'Dracula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
@@ -179,6 +174,6 @@ imap <Leader>_b <c-/>
 "imap <right> <nop>
 
 "Ignored files
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
-let g:netrw_list_hide='*.o,*.obj,*~,*.swp,.svn,.git,.keep,.hg,CVS,.DS_Store,.sass-cache,.bin,.bundle,node_modules,.pygments-cache,.yardoc,coverage,log,tmp,build,pkg'
-set wildignore=*.o,*.obj,*~,*.swp,*.swp$,.svn,.git,.keep,.hg,CVS,.DS_Store,.sass-cache,.bin,.bundle,node_modules,.pygments-cache,.yardoc,coverage,log,tmp,build,pkg
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|svn|node_modules|bower_components)$'
+let g:netrw_list_hide='.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components'
+set wildignore=.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components
