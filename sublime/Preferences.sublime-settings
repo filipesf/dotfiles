@@ -1,20 +1,20 @@
 {
-	"color_scheme": "Packages/User/SublimeLinter/base16-dracula (SL).tmTheme",
+	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
 	"draw_shadows": false,
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
 		".git",
-    ".swp",
-    ".swo",
-    ".netrwhist",
-    ".gitkeep",
-    ".DS_Store"
-  ],
-  "folder_exclude_patterns":
-  [
-    ".git",
+		".swp",
+		".swo",
+		".netrwhist",
+		".gitkeep",
+		".DS_Store"
+	],
+	"folder_exclude_patterns":
+	[
+		".git",
 		".svn",
 		".sass-cache",
 		"node_modules",
