@@ -1,11 +1,11 @@
 {
-	"color_scheme": "Packages/User/SublimeLinter/base16-dracula (SL).tmTheme",
-	"draw_shadows": false,
-	"draw_white_space": "selection",
-	"ensure_newline_at_eof_on_save": true,
-	"file_exclude_patterns":
-	[
-		".git",
+  "color_scheme": "Packages/User/SublimeLinter/base16-dracula (SL).tmTheme",
+  "draw_shadows": false,
+  "draw_white_space": "selection",
+  "ensure_newline_at_eof_on_save": true,
+  "file_exclude_patterns":
+  [
+    ".git",
     ".swp",
     ".swo",
     ".netrwhist",
@@ -15,36 +15,36 @@
   "folder_exclude_patterns":
   [
     ".git",
-		".svn",
-		".sass-cache",
-		"node_modules",
-		"bower_components"
-	],
-	"font_face": "Inconsolata for Powerline",
-	"font_options":
-	[
-		"antialias"
-	],
-	"font_size": 20,
-	"highlight_line": true,
-	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"line_padding_bottom": 2,
-	"line_padding_top": 2,
-	"overlay_scroll_bars": "enabled",
-	"rulers":
-	[
-		-1,
-		80
-	],
-	"scroll_past_end": true,
-	"theme": "Seti.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
-	"word_wrap": false,
-	"wrap_width": 80
+    ".svn",
+    ".sass-cache",
+    "node_modules",
+    "bower_components"
+  ],
+  "font_face": "Inconsolata for Powerline",
+  "font_options":
+  [
+    "antialias"
+  ],
+  "font_size": 20,
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "line_padding_bottom": 2,
+  "line_padding_top": 2,
+  "overlay_scroll_bars": "enabled",
+  "rulers":
+  [
+    -1,
+    80
+  ],
+  "scroll_past_end": true,
+  "theme": "Seti.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
+  "word_wrap": false,
+  "wrap_width": 80
 }
