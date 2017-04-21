@@ -23,7 +23,7 @@
 	"font_face": "Inconsolata for Powerline",
 	"font_options":
 	[
-		"antialias"
+		"gray_antialias"
 	],
 	"font_size": 20,
 	"highlight_line": true,
