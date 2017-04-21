@@ -1,22 +1,14 @@
-"No compatibility
-set nocompatible
+"VUNDLE SETUP
+"-------------------------------------------------------------------------------
+set rtp+=$HOME/.vim/bundle/Vundle.vim "Set Runtime Directory
 
-"Set Runtime Directory
-set rtp+=$HOME/.vim/bundle/Vundle.vim
-
-"Vundle Setup
-filetype off
 call vundle#begin()
-
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'elzr/vim-json'
 Plugin 'tomtom/tlib_vim'
-Plugin 'marcweber/vim-addon-mw-utils'
-Plugin 'msanders/snipMate.vim'
+Plugin 'garbas/vim-snipmate'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'jayferd/ragel.vim'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
@@ -30,62 +22,90 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'itchyny/lightline.vim'
-
 call vundle#end()
-filetype plugin indent on
 
-"Set UTF-8 Encoding
-set encoding=utf-8
-set termencoding=utf-8
+"COMPATIBILITY & ENCODING
+"-------------------------------------------------------------------------------
+set nocompatible    "Use Vim features, not Vi
+set encoding=utf-8  "Set UTF-8 Encoding
 
-syntax enable     "Syntax
-set laststatus=2  "Status bar
-set shiftround    "Round indent to nearest multiple of 2
-set nowrap        "No line-wrapping
-set noesckeys     "Faster escape
-set title         "Show file title in terminal tab
-set cursorline    "Cursor
-set ruler         "Show current line and column position in file
-set shortmess=atI "File messages and options
-set showtabline=2 "Show tabline
-set showcmd       "Incomplete Commands
-set noshowmode    "Powerlined
-set modeline      "Allow modelines
-set shiftround    "Round indent to nearest multiple of 2
-set nowrap        "No line-wrapping
+"SYNTAX HIGHLIGHTING
+"-------------------------------------------------------------------------------
+syntax enable       "Switches on syntax highlighting
+filetype plugin on  "Detect filetype
+colorscheme dracula "Using Dracula for better syntax highlight
+set background=dark "Dracula can't stand the light
+set t_Co=256        "256 colours
+set showmatch       "Show matching parens, brackets, etc.
+set shiftround      "Round indent to nearest multiple of 2
+set guifont=Inconsolata\ for\ Powerline:h20
 
-"Tabs
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
+"TEXT
+"-------------------------------------------------------------------------------
+filetype plugin indent on "When a file is edited its indent file is loaded
+let html_no_rendering=1   "Remove underline from HTML files
+set expandtab             "Make the tab key insert spaces instead of tabs
+set tabstop=2             "Set the width of an actual tab
+set shiftwidth=2          "Size of an indent
+set softtabstop=2         "Make the tab key to simulate tab stops at this width
+set showtabline=2         "Show tabline
+set nowrap                "No line-wrapping
 
-"Line numbers
-set number
-set numberwidth=5
+"DECORATIONS
+"-------------------------------------------------------------------------------
+set number          "Display line numbers
+set numberwidth=5   "Change the width of the gutter column used for numbering
+set ruler           "Show current line and column position in file
+set textwidth=80    "New line after 80 characters
+set colorcolumn=+1  "Colour the 81st column
+set cursorline      "Highlight the current line in every window
+set title           "Show file title in terminal tab
+set shortmess=atI   "File messages and options
+set showcmd         "Incomplete Commands
+set laststatus=2    "Make the status line visible in with only one window
+set modeline        "Allow modelines
 
-"Force the cursor onto a new line after 80 characters
-set textwidth=80
-"However, in Git commit messages, let’s make it 72 characters
-autocmd FileType gitcommit set textwidth=72
-"Colour the 81st (or 73rd) column so that we don’t type over our limit
-set colorcolumn=+1
+"BUFFER
+"-------------------------------------------------------------------------------
+set wildmenu        "Show file options above the command line
+set splitbelow      "Open splits to below
+set splitright      "Open splits to the right
+set wildignore=.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components
+let g:netrw_list_hide='.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|svn|node_modules|bower_components)$'
 
-"Set 256 Colors
-set t_Co=256
-set term=xterm-256color
-let base16colorspace=256
+"INTERACTIONS
+"-------------------------------------------------------------------------------
+set scrolloff=3     "Start scrolling before the cursor reaches an edge
+set sidescrolloff=5 "Start scrolling before the cursor reaches an edge
+set sidescroll=1    "Scroll sideways a character at a time
+set backspace=indent,eol,start "Allow motions and back-spacing over line-endings
+set whichwrap=h,l,b,<,>,~,[,]  "Allow motions and back-spacing over line-endings
+autocmd VimResized * exe "normal! \<c-w>=" "Resize splits
 
-"Theme
-set background=dark
-colorscheme dracula
-set guifont=Inconsolata\ for\ Powerline:h18
+"KEY MAPPINGS
+"-------------------------------------------------------------------------------
+inoremap jj <esc>     "jj to throw you into normal mode from insert mode
+noremap jk <esc>      "jK to throw you into normal mode from insert mode
+map  <Leader>_b <c-/> "Toggle comments
+imap <Leader>_b <c-/> "Toggle comments
 
-"Splits
-set splitbelow
-set splitright
+"Front-end Beautify
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
-"Powerline config
+"PLUGINS SETTINGS
+"-------------------------------------------------------------------------------
+"CSS Autocomplete
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+"Emmet
+let g:user_emmet_install_global = 0       "Turn Emmet off globally
+autocmd FileType html,css EmmetInstall    "Emmet just for HTML & CSS
+let g:user_emmet_expandabbr_key = '<tab>' "Change Emmet trigger to Tab
+
+"Powerline
 let g:lightline = {
       \ 'colorscheme': 'Dracula',
       \ 'active': {
@@ -122,58 +142,3 @@ function! MyFilename()
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
-
-"CSS Autocomplete
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
-"Emmet just for HTML & CSS
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-
-"Change Emmet trigger to Tab
-let g:user_emmet_expandabbr_key = '<tab>'
-
-"Remove underline from HTML files
-let html_no_rendering=1
-
-"Start scrolling slightly before the cursor reaches an edge
-set scrolloff=3
-set sidescrolloff=5
-
-"Scroll sideways a character at a time, rather than a screen at a time
-set sidescroll=1
-
-"Allow motions and back-spacing over line-endings etc
-set backspace=indent,eol,start
-set whichwrap=h,l,b,<,>,~,[,]
-
-"Resize splits when the window is resized
-autocmd VimResized * exe "normal! \<c-w>="
-
-"Front-end Beautify
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
-
-"jj and jk to throw you into normal mode from insert mode
-inoremap jj <esc>
-noremap jk <esc>
-
-"Toggle comments
-map  <Leader>_b <c-/>
-imap <Leader>_b <c-/>
-
-"Disable arrow keys (hardcore)
-"map  <up>    <nop>
-"imap <up>    <nop>
-"map  <down>  <nop>
-"imap <down>  <nop>
-"map  <left>  <nop>
-"imap <left>  <nop>
-"map  <right> <nop>
-"imap <right> <nop>
-
-"Ignored files
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|svn|node_modules|bower_components)$'
-let g:netrw_list_hide='.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components'
-set wildignore=.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components
