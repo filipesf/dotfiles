@@ -30,7 +30,6 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'itchyny/lightline.vim'
-Plugin 'dracula/vim'
 
 call vundle#end()
 filetype plugin indent on
