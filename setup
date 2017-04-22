@@ -6,9 +6,14 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 echo "Installing Oh My ZSH..."
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+echo "Installing Ngrok..."
+brew cask install ngrok
+
 echo "Creating symlinks..."
 rm -rf ~/.zshrc
 ln -s `pwd`/shell/zshrc ~/.zshrc
+ln -s `pwd`/shell/aliases ~/.aliases
+ln -s `pwd`/shell/prompt ~/.prompt
 ln -s `pwd`/git/gitconfig ~/.gitconfig
 ln -s `pwd`/git/gitignore ~/.gitignore
 ln -s `pwd`/git/gitcommit ~/.gitcommit
