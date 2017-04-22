@@ -7,7 +7,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
@@ -26,18 +25,20 @@ call vundle#end()
 
 "COMPATIBILITY & ENCODING
 "-------------------------------------------------------------------------------
-set nocompatible    "Use Vim features, not Vi
-set encoding=utf-8  "Set UTF-8 Encoding
+set nocompatible       "Use Vim features, not Vi
+set encoding=utf-8     "Set UTF-8 Encoding
+set termencoding=utf-8 "Set UTF-8 Encoding
 
 "SYNTAX HIGHLIGHTING
 "-------------------------------------------------------------------------------
-syntax enable       "Switches on syntax highlighting
-filetype plugin on  "Detect filetype
-colorscheme dracula "Using Dracula for better syntax highlight
-set background=dark "Dracula can't stand the light
-set t_Co=256        "256 colours
-set showmatch       "Show matching parens, brackets, etc.
-set shiftround      "Round indent to nearest multiple of 2
+syntax enable           "Switches on syntax highlighting
+filetype plugin on      "Detect filetype
+colorscheme dracula     "Using Dracula for better syntax highlight
+set background=dark     "Dracula can't stand the light
+set term=xterm-256color "256 colours
+set t_Co=256            "256 colours
+set showmatch           "Show matching parens, brackets, etc.
+set shiftround          "Round indent to nearest multiple of 2
 set guifont=Inconsolata\ for\ Powerline:h20
 
 "TEXT
@@ -67,9 +68,10 @@ set modeline        "Allow modelines
 
 "BUFFER
 "-------------------------------------------------------------------------------
-set wildmenu        "Show file options above the command line
-set splitbelow      "Open splits to below
-set splitright      "Open splits to the right
+set wildmenu          "Show file options above the command line
+set splitbelow        "Open splits to below
+set splitright        "Open splits to the right
+set fillchars=vert:\  "Change vertical split characters
 set wildignore=.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components
 let g:netrw_list_hide='.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|svn|node_modules|bower_components)$'
@@ -117,9 +119,7 @@ let g:lightline = {
       \   'readonly': 'MyReadonly',
       \   'fugitive': 'MyFugitive',
       \   'filename': 'MyFilename'
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
       \ }
 
 function! MyModified()
