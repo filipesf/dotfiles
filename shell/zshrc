@@ -1,24 +1,4 @@
-# Load ZSH sutff
-export ZSH=~/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-
-# Prompt config
-local ret_status="%(?:%{$fg[green]%}●:%{$fg[red]%}●)"
-PROMPT='${ret_status} $fg[cyan]%~$(git_prompt_info) $fg[blue]%(!.#.»)%{$reset_color%} '
-
-# Git prompt config
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}(%{$fg[green]%}"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}*"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[cyan]%})%{$reset_color%}"
-
-# Aliases
-alias site='cd ~/Code/filipesf.com'
-alias editvhosts='sudo vim /private/etc/apache2/extra/httpd-vhosts.conf'
-alias edithosts='sudo vim /private/etc/hosts'
-alias rmdstore='find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch'
-
-# Run a server on the current directory
-server() {
-  open 'http://localhost:${1}' && python -m SimpleHTTPServer $1
-}
+export ZSH=~/.oh-my-zsh  # Export ZSH folder
+source $ZSH/oh-my-zsh.sh # Load ZSH
+source ~/.aliases        # Load aliases
+source ~/.prompt         # Load prompt settings

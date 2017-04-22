@@ -1,0 +1,10 @@
+# Aliases
+alias site='cd ~/Code/filipesf.com'
+alias editvhosts='sudo vim /private/etc/apache2/extra/httpd-vhosts.conf'
+alias edithosts='sudo vim /private/etc/hosts'
+alias rmdstore='find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch'
+
+# Run a server on the current directory
+server() {
+  open 'http://localhost:${1}' && python -m SimpleHTTPServer $1
+}
