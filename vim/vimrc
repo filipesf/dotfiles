@@ -65,6 +65,7 @@ set shortmess=atI   "File messages and options
 set showcmd         "Incomplete Commands
 set laststatus=2    "Make the status line visible in with only one window
 set modeline        "Allow modelines
+set guioptions-=r   "Hide right scrollbar from GUI
 
 "BUFFER
 "-------------------------------------------------------------------------------
