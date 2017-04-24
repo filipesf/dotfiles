@@ -66,6 +66,7 @@ set showcmd         "Incomplete Commands
 set laststatus=2    "Make the status line visible in with only one window
 set modeline        "Allow modelines
 set guioptions-=r   "Hide right scrollbar from GUI
+set guioptions-=e   "Make Vim GUI tab menu to look like Console tab menu
 
 "BUFFER
 "-------------------------------------------------------------------------------
