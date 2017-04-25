@@ -33,8 +33,8 @@ set termencoding=utf-8 "Set UTF-8 Encoding
 "-------------------------------------------------------------------------------
 syntax enable           "Switches on syntax highlighting
 filetype plugin on      "Detect filetype
-colorscheme dracula     "Using Dracula for better syntax highlight
-set background=dark     "Dracula can't stand the light
+colorscheme solarized   "Better syntax highlight
+set background=dark     "Dark background for better reading
 set term=xterm-256color "256 colours
 set t_Co=256            "256 colours
 set showmatch           "Show matching parens, brackets, etc.
@@ -111,7 +111,7 @@ let g:user_emmet_expandabbr_key = '<tab>' "Change Emmet trigger to Tab
 
 "Powerline
 let g:lightline = {
-      \ 'colorscheme': 'Dracula',
+      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
