@@ -57,6 +57,9 @@ set shiftwidth=2          "Size of an indent
 set softtabstop=2         "Make the tab key to simulate tab stops at this width
 set showtabline=2         "Show tabline
 set nowrap                "No line-wrapping
+set formatoptions+=roq    "Auto-format comments
+set spell                 "Spell-check always on
+set iskeyword-=_          "Underscores denote words
 
 
 
