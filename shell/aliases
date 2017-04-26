@@ -3,6 +3,8 @@ alias site='cd ~/Code/filipesf.com'
 alias dot='cd ~/Code/dotfiles'
 alias editvhosts='sudo vim /private/etc/apache2/extra/httpd-vhosts.conf'
 alias edithosts='sudo vim /private/etc/hosts'
+alias sassw='sass --watch --sourcemap=none --no-cache'
+alias sassu='sass --update --sourcemap=none --no-cache'
 alias rmdstore='find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch'
 alias vtop='vtop --theme wizard'
 
