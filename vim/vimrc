@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mattn/emmet-vim'
@@ -77,7 +78,10 @@ set formatoptions+=roq
 set spell
 "Underscores denote words
 set iskeyword-=_
-
+"Remove automatically all trailing whitespaces
+autocmd BufWritePre * %s/\s\+$//e
+"Note trailing space at end of next line
+set showbreak=>\ \ \
 
 
 
