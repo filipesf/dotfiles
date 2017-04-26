@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim "Set Runtime Directory
 
 
 
+
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'wakatime/vim-wakatime'
@@ -23,9 +24,12 @@ call vundle#end()
 
 "COMPATIBILITY & ENCODING
 "-------------------------------------------------------------------------------
-set nocompatible       "Use Vim features, not Vi
-set encoding=utf-8     "Set UTF-8 Encoding
-set termencoding=utf-8 "Set UTF-8 Encoding
+"Use Vim features, not Vi
+set nocompatible
+"Set UTF-8 Encoding
+set encoding=utf-8
+"Set UTF-8 Encoding
+set termencoding=utf-8
 
 
 
@@ -33,15 +37,20 @@ set termencoding=utf-8 "Set UTF-8 Encoding
 
 "SYNTAX HIGHLIGHTING
 "-------------------------------------------------------------------------------
-syntax enable           "Switches on syntax highlighting
-filetype plugin on      "Detect filetype
-colorscheme solarized   "Better syntax highlight
-set background=dark     "Dark background for better reading
-set term=xterm-256color "256 colours
-set t_Co=256            "256 colours
-set showmatch           "Show matching parens, brackets, etc.
-set shiftround          "Round indent to nearest multiple of 2
-set guifont=Inconsolata\ for\ Powerline:h20
+"Switches on syntax highlighting
+syntax enable
+"Detect filetype
+filetype plugin on
+"Better syntax highlight
+colorscheme solarized
+set background=dark
+"256 colours
+set term=xterm-256color
+set t_Co=256
+"Show matching parens, brackets, etc.
+set showmatch
+"Round indent to nearest multiple of 2
+set shiftround
 
 
 
@@ -49,17 +58,25 @@ set guifont=Inconsolata\ for\ Powerline:h20
 
 "TEXT
 "-------------------------------------------------------------------------------
-filetype plugin indent on "When a file is edited its indent file is loaded
-let html_no_rendering=1   "Remove underline from HTML files
-set expandtab             "Make the tab key insert spaces instead of tabs
-set tabstop=2             "Set the width of an actual tab
-set shiftwidth=2          "Size of an indent
-set softtabstop=2         "Make the tab key to simulate tab stops at this width
-set showtabline=2         "Show tabline
-set nowrap                "No line-wrapping
-set formatoptions+=roq    "Auto-format comments
-set spell                 "Spell-check always on
-set iskeyword-=_          "Underscores denote words
+"When a file is edited its indent file is loaded
+filetype plugin indent on
+"Remove underline from HTML files
+let html_no_rendering=1
+"Make the tab key insert spaces instead of tabs
+set expandtab
+"2 spaces indentation
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set showtabline=2
+"No line-wrapping
+set nowrap
+"Auto-format comments
+set formatoptions+=roq
+"Spell-check always on
+set spell
+"Underscores denote words
+set iskeyword-=_
 
 
 
@@ -67,21 +84,36 @@ set iskeyword-=_          "Underscores denote words
 
 "DECORATIONS
 "-------------------------------------------------------------------------------
-set number          "Display line numbers
-set numberwidth=5   "Change the width of the gutter column used for numbering
-set ruler           "Show current line and column position in file
-set textwidth=80    "New line after 80 characters
-set colorcolumn=+1  "Colour the 81st column
-set cursorline      "Highlight the current line in every window
-set title           "Show file title in terminal tab
-set shortmess=atI   "File messages and options
-set showcmd         "Incomplete Commands
-set laststatus=2    "Make the status line visible in with only one window
-set modeline        "Allow modelines
-set guioptions-=r   "Hide right scrollbar from GUI
-set guioptions-=e   "Make Vim GUI tab menu to look like Console tab menu
-set list            "Show invisibles
-set listchars=tab:»-,trail:· "Make the invisibles looks better
+"Display line numbers
+set number
+"Change the width of the gutter column used for numbering
+set numberwidth=5
+"Show current line and column position in file
+set ruler
+"New line after 80 characters
+set textwidth=80
+"Colour the 81st column
+set colorcolumn=+1
+"Highlight the current line in every window
+set cursorline
+"Show file title in terminal tab
+set title
+"File messages and options
+set shortmess=atI
+"Incomplete Commands
+set showcmd
+"Make the status line visible in with only one window
+set laststatus=2
+"Allow modelines
+set modeline
+"Hide right scrollbar from GUI
+set guioptions-=r
+"Make Vim GUI tab menu to look like Console tab menu
+set guioptions-=e
+"Show invisibles
+set list
+"Make the invisibles looks better
+set listchars=tab:»-,trail:·
 
 
 
@@ -89,10 +121,15 @@ set listchars=tab:»-,trail:· "Make the invisibles looks better
 
 "BUFFER
 "-------------------------------------------------------------------------------
-set wildmenu          "Show file options above the command line
-set splitright        "Open splits to the right
-set splitbelow        "Open splits to below
-set fillchars=vert:\  "Change vertical split characters
+"Show file options above the command line
+set wildmenu
+"Open splits to the right
+set splitright
+"Open splits to below
+set splitbelow
+"Change vertical split characters
+set fillchars=vert:\
+"Don't offer to open certain files/directories
 set wildignore=.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components
 let g:netrw_list_hide='.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|svn|node_modules|bower_components)$'
@@ -100,12 +137,17 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|svn|node_modules|bower_components)$'
 
 
 
+
 "SEARCH
 "-------------------------------------------------------------------------------
-set nohlsearch "Don't keep results highlighted after searching
-set incsearch  "Just highlight as we type
-set ignorecase "Ignore case when searching
-set smartcase  "Except if we input a capital letter
+"Don't keep results highlighted after searching
+set nohlsearch
+"Just highlight as we type
+set incsearch
+"Ignore case when searching
+set ignorecase
+"Except if we input a capital letter
+set smartcase
 
 
 
@@ -113,13 +155,17 @@ set smartcase  "Except if we input a capital letter
 
 "INTERACTIONS
 "-------------------------------------------------------------------------------
-set scrolloff=3     "Start scrolling before the cursor reaches an edge
-set sidescrolloff=5 "Start scrolling before the cursor reaches an edge
-set sidescroll=1    "Scroll sideways a character at a time
-set backspace=indent,eol,start "Allow motions and back-spacing over line-endings
-set whichwrap=h,l,b,<,>,~,[,]  "Allow motions and back-spacing over line-endings
+"Start scrolling before the cursor reaches an edge
+set scrolloff=3
+set sidescrolloff=5
+"Scroll sideways a character at a time
+set sidescroll=1
+"Allow motions and back-spacing over line-endings
+set backspace=indent,eol,start
+set whichwrap=h,l,b,<,>,~,[,]
 set statusline=%f\ %=Line\ %l/%L\ Col\ %c\ (%p%%)
-autocmd VimResized * exe "normal! \<c-w>=" "Resize splits
+"Resize splits
+autocmd VimResized * exe "normal! \<c-w>="
 
 
 
@@ -127,15 +173,12 @@ autocmd VimResized * exe "normal! \<c-w>=" "Resize splits
 
 "KEY MAPPINGS
 "-------------------------------------------------------------------------------
-inoremap jj <esc>     "jj to throw you into normal mode from insert mode
-noremap jk <esc>      "jK to throw you into normal mode from insert mode
-map  <Leader>_b <c-/> "Toggle comments
-imap <Leader>_b <c-/> "Toggle comments
-
-
-
-
-
+"jj and jk to throw you into normal mode from insert mode
+inoremap jj <esc>
+noremap jk <esc>
+"Toggle comments
+map  <Leader>_b <c-/>
+imap <Leader>_b <c-/>
 "Front-end Beautify
 autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
