@@ -176,6 +176,14 @@ autocmd VimResized * exe "normal! \<c-w>="
 "jj and jk to throw you into normal mode from insert mode
 inoremap jj <esc>
 noremap jk <esc>
+"Make n and N bring next search result to middle line
+nnoremap n nzz
+nnoremap N Nzz
+"Vim-like window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 "Toggle comments
 map  <Leader>_b <c-/>
 imap <Leader>_b <c-/>
