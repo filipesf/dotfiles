@@ -52,6 +52,10 @@ set t_Co=256
 set showmatch
 "Round indent to nearest multiple of 2
 set shiftround
+"Set syntax for HTML templates
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.hbs set filetype=html
+autocmd BufRead,BufNewFile *.mustache set filetype=html
 
 
 
