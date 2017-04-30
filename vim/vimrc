@@ -1,11 +1,9 @@
 "VUNDLE SETUP
 "-------------------------------------------------------------------------------
-set rtp+=~/.vim/bundle/Vundle.vim "Set Runtime Directory
+"Set Runtime Directory
+set rtp+=~/.vim/bundle/Vundle.vim
 
-
-
-
-
+"Load plugins
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'wakatime/vim-wakatime'
@@ -45,8 +43,11 @@ filetype plugin on
 "Better syntax highlight
 colorscheme solarized
 set background=dark
+"Italicised comments and attributes
+highlight htmlArg cterm=italic
+highlight Comment cterm=italic
+highlight Type cterm=italic
 "256 colours
-set term=xterm-256color
 set t_Co=256
 "Show matching parens, brackets, etc.
 set showmatch
@@ -98,10 +99,14 @@ set number
 set numberwidth=5
 "Show current line and column position in file
 set ruler
-"New line after 80 characters
-set textwidth=80
 "Colour the 81st column
-set colorcolumn=+1
+set colorcolumn=81
+"New line after 80 characters only for Markdown files
+autocmd FileType markdown set textwidth=80
+"After 72 characters for Git commit messages
+autocmd FileType gitcommit set textwidth=72
+"And colour line after 73 characters
+autocmd FileType gitcommit set colorcolumn=73
 "Highlight the current line in every window
 set cursorline
 "Show file title in terminal tab
@@ -114,10 +119,6 @@ set showcmd
 set laststatus=2
 "Allow modelines
 set modeline
-"Hide right scrollbar from GUI
-set guioptions-=r
-"Make Vim GUI tab menu to look like Console tab menu
-set guioptions-=e
 "Show invisibles
 set list
 "Make the invisibles looks better
@@ -192,24 +193,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-"Toggle comments
-map  <Leader>_b <c-/>
-imap <Leader>_b <c-/>
 "Front-end Beautify
 autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+"Change Emmet trigger to Tab
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
-
-
-
-
-"PLUGINS SETTINGS
-"-------------------------------------------------------------------------------
-"CSS Autocomplete
-" autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
-"Emmet
-" let g:user_emmet_install_global = 0       "Turn Emmet off globally
-" autocmd FileType html,css EmmetInstall    "Emmet just for HTML & CSS
-" let g:user_emmet_expandabbr_key = '<tab>' "Change Emmet trigger to Tab
