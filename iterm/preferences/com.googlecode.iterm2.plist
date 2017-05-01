@@ -443,9 +443,21 @@
 	<true/>
 	<key>DimOnlyText</key>
 	<true/>
+	<key>DisableFullscreenTransparency</key>
+	<true/>
+	<key>FlashTabBarInFullscreen</key>
+	<true/>
+	<key>HideActivityIndicator</key>
+	<false/>
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
+	<key>HideScrollbar</key>
+	<true/>
 	<key>HideTab</key>
+	<true/>
+	<key>HideTabCloseButton</key>
+	<true/>
+	<key>HideTabNumber</key>
 	<true/>
 	<key>JobName</key>
 	<true/>
@@ -513,11 +525,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>882 74 445 77 0 0 1366 746 </string>
+	<string>882 37 445 77 0 0 1366 768 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>704 89 599 502 0 0 1366 746 </string>
+	<string>704 43 599 502 0 0 1366 768 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>390 97 918 495 0 0 1366 746 </string>
+	<string>390 189 796 473 0 0 1366 768 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 16 1366 730 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1242,10 +1254,14 @@
 	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
+	<key>SmartPlacement</key>
+	<true/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.36867487980769253</real>
 	<key>TabStyle</key>
 	<integer>3</integer>
+	<key>UseBorder</key>
+	<false/>
 	<key>WindowNumber</key>
 	<true/>
 	<key>WordCharacters</key>
