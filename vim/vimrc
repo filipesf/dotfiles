@@ -139,9 +139,9 @@ set splitbelow
 "Change vertical split characters
 set fillchars=vert:\
 "Don't offer to open certain files/directories
-set wildignore=.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components
-let g:netrw_list_hide='.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|svn|node_modules|bower_components)$'
+set wildignore=.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components,wp-admin,wp-includes
+let g:netrw_list_hide='.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components,wp-admin,wp-includes'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|svn|node_modules|bower_components|wp-admin|wp-includes)$'
 
 
 
