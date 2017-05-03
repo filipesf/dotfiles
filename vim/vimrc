@@ -1,21 +1,23 @@
 "VUNDLE SETUP
 "-------------------------------------------------------------------------------
 "Set Runtime Directory
-set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=~/.vim/bundle/Vundle.vim
+
+execute pathogen#infect()
 
 "Load plugins
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'wakatime/vim-wakatime'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'vim-scripts/OmniCppComplete'
-Plugin 'kien/ctrlp.vim'
-call vundle#end()
+" call vundle#begin()
+" Plugin 'VundleVim/Vundle.vim'
+" Plugin 'wakatime/vim-wakatime'
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'maksimr/vim-jsbeautify'
+" Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'tomtom/tcomment_vim'
+" Plugin 'editorconfig/editorconfig-vim'
+" Plugin 'mattn/emmet-vim'
+" Plugin 'vim-scripts/OmniCppComplete'
+" Plugin 'kien/ctrlp.vim'
+" call vundle#end()
 
 
 
