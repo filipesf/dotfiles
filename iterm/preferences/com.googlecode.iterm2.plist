@@ -529,15 +529,19 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>704 43 599 502 0 0 1366 768 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>390 189 796 473 0 0 1366 768 </string>
+	<string>390 150 937 512 0 0 1366 768 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 16 1366 730 0 0 1366 746 </string>
+	<string>2 188 810 554 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2 188 810 554 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>186 -10 890 629 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>207 144 810 602 0 0 1366 746 </string>
+	<key>NeverWarnAboutShortLivedSessions_C6E2E51B-1184-49FB-A4CB-D8103DC07B37</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_C6E2E51B-1184-49FB-A4CB-D8103DC07B37_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1150,7 +1154,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Smart Cursor Color</key>
 			<true/>
 			<key>Sync Title</key>
@@ -1245,7 +1249,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-04-30T14:32:49Z</date>
+	<date>2017-05-02T18:24:23Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
