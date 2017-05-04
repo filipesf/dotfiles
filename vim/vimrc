@@ -1,23 +1,7 @@
-"VUNDLE SETUP
+"SETUP
 "-------------------------------------------------------------------------------
 "Set Runtime Directory
-" set rtp+=~/.vim/bundle/Vundle.vim
-
 execute pathogen#infect()
-
-"Load plugins
-" call vundle#begin()
-" Plugin 'VundleVim/Vundle.vim'
-" Plugin 'wakatime/vim-wakatime'
-" Plugin 'airblade/vim-gitgutter'
-" Plugin 'maksimr/vim-jsbeautify'
-" Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'tomtom/tcomment_vim'
-" Plugin 'editorconfig/editorconfig-vim'
-" Plugin 'mattn/emmet-vim'
-" Plugin 'vim-scripts/OmniCppComplete'
-" Plugin 'kien/ctrlp.vim'
-" call vundle#end()
 
 
 
@@ -29,7 +13,6 @@ execute pathogen#infect()
 set nocompatible
 "Set UTF-8 Encoding
 set encoding=utf-8
-"Set UTF-8 Encoding
 set termencoding=utf-8
 
 
@@ -103,7 +86,7 @@ set numberwidth=5
 set ruler
 "Colour the 81st column
 set colorcolumn=81
-"New line after 80 characters only for Markdown files
+"New line after 80 characters for Markdown files
 autocmd FileType markdown set textwidth=80
 "After 72 characters for Git commit messages
 autocmd FileType gitcommit set textwidth=72
