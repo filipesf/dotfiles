@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# ZSH
-echo "Creating ZSH symlinks..."
-ln -s `pwd`/zshrc ~/.zshrc
-ln -s `pwd`/prompt ~/.prompt
+# BASH
+echo "Creating Bash symlinks..."
+ln -s `pwd`/bashrc ~/.bashrc
+ln -s `pwd`/bash_profile ~/.bash_profile
 
 # GIT
 echo "Creating GIT symlinks..."
@@ -15,6 +15,10 @@ ln -s `pwd`/gitcommit ~/.gitcommit
 echo "Creating VIM symlinks..."
 ln -s `pwd`/vim ~/.vim
 ln -s `pwd`/vimrc ~/.vimrc
+
+# Ack
+echo "Creating Ack symlink..."
+ln -s `pwd`/ackrc ~/.ackrc
 
 # EditorConfig
 echo "Creating EditorConfig symlink..."
