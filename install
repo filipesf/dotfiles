@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# ZSH
+echo "Creating ZSH symlinks..."
+ln -s `pwd`/zshrc ~/.zshrc
+ln -s `pwd`/prompt ~/.prompt
+
+# GIT
+echo "Creating GIT symlinks..."
+ln -s `pwd`/gitconfig ~/.gitconfig
+ln -s `pwd`/gitignore ~/.gitignore
+ln -s `pwd`/gitcommit ~/.gitcommit
+
+# VIM
+echo "Creating VIM symlinks..."
+ln -s `pwd`/vim ~/.vim
+ln -s `pwd`/vimrc ~/.vimrc
+
+# EditorConfig
+echo "Creating EditorConfig symlink..."
+ln -s `pwd`/editorconfig ~/.editorconfig

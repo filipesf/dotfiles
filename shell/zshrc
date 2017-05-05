@@ -1,6 +1,0 @@
-export ZSH=~/.oh-my-zsh  # Export ZSH folder
-export EDITOR=vim        # Set Vim as default editor
-source $ZSH/oh-my-zsh.sh # Load ZSH
-source ~/.aliases        # Load aliases
-source ~/.prompt         # Load prompt settings
-

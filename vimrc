@@ -13,7 +13,7 @@ execute pathogen#infect()
 set nocompatible
 "Set UTF-8 Encoding
 set encoding=utf-8
-set termencoding=utf-8
+set fileencoding=utf-8
 
 
 
@@ -41,7 +41,6 @@ set shiftround
 "Set syntax for HTML templates
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.hbs set filetype=html
-autocmd BufRead,BufNewFile *.mustache set filetype=html
 
 
 
