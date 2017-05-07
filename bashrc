@@ -42,6 +42,11 @@ alias ackdc="ack --css '\d*\.\d*px'"
 
 
 
+# Youtube Downloader
+alias yt='youtube-dl -f mp4'
+
+
+
 # Run a server on the current directory
 server() {
   open "http://localhost:${1}" && python -m SimpleHTTPServer $1
