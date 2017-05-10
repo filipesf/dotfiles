@@ -106,7 +106,7 @@ set modeline
 "Show invisibles
 set list
 "Make the invisibles looks better
-set listchars=tab:»-,trail:·
+set listchars=tab:»-,trail:·,eol:¬
 
 
 
