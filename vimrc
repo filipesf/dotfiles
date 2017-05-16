@@ -40,7 +40,8 @@ set showmatch
 set shiftround
 "Set syntax for HTML templates
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.hbs set filetype=html
+autocmd BufRead,BufNewFile *.hbs set filetype=htmldjango
+autocmd BufRead,BufNewFile *.mustache set filetype=htmldjango
 
 
 
