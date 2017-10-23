@@ -31,3 +31,6 @@
 [submodule "vim/bundle/vim-wakatime"]
 	path = vim/bundle/vim-wakatime
 	url = https://github.com/wakatime/vim-wakatime.git
+[submodule "vim/bundle/vim-typescript"]
+	path = vim/bundle/vim-typescript
+	url = https://github.com/leafgarland/typescript-vim.git
