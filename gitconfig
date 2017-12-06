@@ -45,7 +45,7 @@
   # Compare commits in one branch against another, e.g. $ git compare tkt-0021 to develop
   compare = "!f() { git log --oneline $1..$2;  }; f"
 [core]
-  editor = vim
+  editor = subl
   excludesfile = ~/.gitignore
   whitespace = warn
 [commit]
