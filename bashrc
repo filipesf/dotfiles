@@ -1,8 +1,8 @@
 # Enable CLI Colours
 export CLICOLOR=1
 
-# Set Vim as default editor
-export EDITOR=vim
+# Set Sublime as default editor
+export EDITOR=subl
 
 
 
