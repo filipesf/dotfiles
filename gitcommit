@@ -1,3 +1,6 @@
-Subject line
+# 50 characters wide commit subject
+# 72 characters wide body description
 
-Body [72 chars]
+[refs #00000] Subject line
+
+Body desctiption
