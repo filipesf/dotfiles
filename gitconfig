@@ -45,7 +45,7 @@
   # Compare commits in one branch against another, e.g. $ git compare tkt-0021 to develop
   compare = "!f() { git log --oneline $1..$2;  }; f"
 [core]
-  editor = subl
+  editor = vim
   excludesfile = ~/.gitignore
   whitespace = warn
 [commit]
@@ -60,3 +60,5 @@
   user = filipesf
 [gitlab]
   user = souzaff
+[ghi]
+  token = !security find-internet-password -a filipesf -s github.com -l 'ghi token' -w
