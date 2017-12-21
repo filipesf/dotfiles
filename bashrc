@@ -7,15 +7,15 @@ export EDITOR=subl
 
 
 # Check the status of all repos in the current directory
-function check_repos () {
+function check_repos() {
   find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git status -s && echo)' \;
 }
 
 
 
 # Get current working git branch
-function git_branch () {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
+function git_branch() {
+  git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/ \(\1\)/"
 }
 
 # Set colour variables
@@ -27,7 +27,7 @@ RST="\[\033[0m\]"
 ITL="\e[3m\]"
 
 # Set prompt config
-PS1="$GRN\u $BLU\w$YLW\$(git_branch)$RST » "
+PS1="$GRN\u$RST$ITL in $BLU\w$YLW$ITL\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"$RST$ITL on\")$YLW\$(git_branch)$RST » "
 
 
 
@@ -50,6 +50,8 @@ alias ackdc="ack --css '\d*\.\d*px'"
 
 
 # Git Flow Aliases
+# Init
+gfi() { git flow init; }
 # Feature
 gcf()  { git checkout feature/$1; }
 gffs() { git flow feature start $1; }
