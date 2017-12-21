@@ -49,6 +49,28 @@ alias ackdc="ack --css '\d*\.\d*px'"
 
 
 
+# Git Flow Aliases
+# Feature
+gcf()  { git checkout feature/$1; }
+gffs() { git flow feature start $1; }
+gfff() { git flow feature finish -F $(git_flow_current_branch); }
+# Bugfix
+gcb()  { git checkout bugfix/$1; }
+gfbs() { git flow bugfix start $1; }
+gfbf() { git flow bugfix finish -F $(git_flow_current_branch); }
+# Hotfix
+gch()  { git checkout hotfix/$1; }
+gfhs() { git flow hotfix start $1; }
+gfhf() { git fetch --tags; git pull origin master; git flow hotfix finish -F $(git_flow_current_branch); }
+# Release
+gcr()  { git checkout release/$1;  }
+gfrs() { git flow release start $1; }
+gfrf() { git flow release finish -F $(git_flow_current_branch); }
+# Get current branch
+git_flow_current_branch(){ git rev-parse --abbrev-ref HEAD | cut -d'/' -f 2; }
+
+
+
 # Youtube Downloader
 alias yt='youtube-dl -f mp4'
 
