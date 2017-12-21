@@ -51,15 +51,11 @@ alias ackdc="ack --css '\d*\.\d*px'"
 
 # Git Flow Aliases
 # Init
-gfi() { git flow init; }
+gfi() { git flow init $1; }
 # Feature
 gcf()  { git checkout feature/$1; }
 gffs() { git flow feature start $1; }
 gfff() { git flow feature finish -F $(git_flow_current_branch); }
-# Bugfix
-gcb()  { git checkout bugfix/$1; }
-gfbs() { git flow bugfix start $1; }
-gfbf() { git flow bugfix finish -F $(git_flow_current_branch); }
 # Hotfix
 gch()  { git checkout hotfix/$1; }
 gfhs() { git flow hotfix start $1; }
