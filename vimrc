@@ -28,6 +28,7 @@ filetype plugin on
 "Better syntax highlight
 colorscheme solarized
 set background=dark
+set guifont=Operator_Mono:h19
 "Italicised comments and attributes
 highlight htmlArg cterm=italic
 highlight Comment cterm=italic
@@ -42,6 +43,8 @@ set shiftround
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.hbs set filetype=htmldjango
 autocmd BufRead,BufNewFile *.mustache set filetype=htmldjango
+" JSX support
+let g:jsx_ext_required = 0
 
 
 

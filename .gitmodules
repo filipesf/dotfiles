@@ -22,6 +22,12 @@
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
 [submodule "vim/bundle/vim-jsbeautify"]
 	path = vim/bundle/vim-jsbeautify
 	url = https://github.com/maksimr/vim-jsbeautify.git
