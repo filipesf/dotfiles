@@ -70,7 +70,7 @@ set nowrap
 "Auto-format comments
 set formatoptions+=roq
 "Spell-check always on
-set spell
+"set spell
 "Underscores denote words
 "set iskeyword-=_
 "Remove automatically all trailing whitespaces
@@ -128,6 +128,8 @@ set splitright
 set splitbelow
 "Change vertical split characters
 set fillchars=vert:\
+"Airline theme
+let g:airline_theme='murmur'
 "Don't offer to open certain files/directories
 set wildignore=.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components,wp-admin,wp-includes
 let g:netrw_list_hide='.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components,wp-admin,wp-includes'
