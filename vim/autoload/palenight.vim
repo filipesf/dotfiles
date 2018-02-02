@@ -19,7 +19,7 @@ let s:colors = {
       \ "visual_grey": get(s:overrides, "visual_grey", { "gui": "#363c52", "cterm": "237", "cterm16": "15" }),
       \ "menu_grey": get(s:overrides, "menu_grey", { "gui": "#363c52", "cterm": "237", "cterm16": "8" }),
       \ "special_grey": get(s:overrides, "special_grey", { "gui": "#3B4048", "cterm": "238", "cterm16": "15" }),
-      \ "vertsplit": get(s:overrides, "vertsplit", { "gui": "#181A1F", "cterm": "59", "cterm16": "15" }),
+      \ "vertsplit": get(s:overrides, "vertsplit", { "gui": "#4B5263", "cterm": "59", "cterm16": "15" }),
       \}
 
 function! palenight#GetColors()
