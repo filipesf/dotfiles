@@ -27,8 +27,8 @@ RST="\[\033[0m\]"
 ITL="\e[3m\]"
 
 # Set prompt config
-PS1="$GRN\u$RST$ITL in $BLU\w$YLW$ITL\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"$RST$ITL on\")$YLW\$(git_branch)$RST » "
-
+# PS1="$GRN\u$RST$ITL in $BLU\w$YLW$ITL\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"$RST$ITL on\")$YLW\$(git_branch)$RST » "
+PS1="$BLU\W$YLW$ITL\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"\")$YLW\$(git_branch)$RST » "
 
 
 # Better Vim
@@ -46,6 +46,8 @@ alias ackbg="ack --css -i 'background:\s*#[a-f0-9]*;'"
 alias ackzr="ack --css '\b0(px|r?em)'"
 # Find Decimal Pixel Values
 alias ackdc="ack --css '\d*\.\d*px'"
+# Freteman shortcut
+alias freteman="cd ~/Code/freteman"
 
 
 
