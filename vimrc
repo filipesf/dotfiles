@@ -129,7 +129,7 @@ set splitbelow
 "Change vertical split characters
 set fillchars=vert:\
 "Airline theme
-let g:airline_theme='murmur'
+let g:airline_theme='kolor'
 "Don't offer to open certain files/directories
 set wildignore=.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components,wp-admin,wp-includes
 let g:netrw_list_hide='.swp,.swo,.netrwhist,.svn,.git,.gitkeep,.DS_Store,.sass-cache,node_modules,bower_components,wp-admin,wp-includes'
