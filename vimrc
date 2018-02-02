@@ -26,13 +26,15 @@ syntax enable
 "Detect filetype
 filetype plugin on
 "Better syntax highlight
-colorscheme solarized
+colorscheme palenight
 set background=dark
+set termguicolors
 set guifont=Operator_Mono:h19
 "Italicised comments and attributes
 highlight htmlArg cterm=italic
 highlight Comment cterm=italic
 highlight Type cterm=italic
+let g:palenight_terminal_italics=1
 "256 colours
 set t_Co=256
 "Show matching parens, brackets, etc.
@@ -70,7 +72,7 @@ set formatoptions+=roq
 "Spell-check always on
 set spell
 "Underscores denote words
-set iskeyword-=_
+"set iskeyword-=_
 "Remove automatically all trailing whitespaces
 autocmd BufWritePre * %s/\s\+$//e
 "Note trailing space at end of next line
