@@ -46,8 +46,6 @@ alias ackbg="ack --css -i 'background:\s*#[a-f0-9]*;'"
 alias ackzr="ack --css '\b0(px|r?em)'"
 # Find Decimal Pixel Values
 alias ackdc="ack --css '\d*\.\d*px'"
-# Freteman shortcut
-alias freteman="cd ~/Code/freteman"
 
 
 
@@ -80,4 +78,3 @@ alias yt='youtube-dl -f mp4'
 server() {
   open "http://localhost:${1}" && python -m SimpleHTTPServer $1
 }
-
