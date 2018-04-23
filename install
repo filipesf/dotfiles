@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# REMOVE ORIGINAL FILES
+rm ~/.bashrc ~/.bash_profile ~/.gitconfig ~/.gitignore ~/.gitcommit ~/.vim ~/.vimrc ~/.ackrc ~/.editorconfig
+
 # BASH
 echo "Creating Bash symlinks..."
 ln -s `pwd`/bashrc ~/.bashrc
