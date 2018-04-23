@@ -6,6 +6,19 @@ export EDITOR=subl
 
 
 
+# BetBright main directory
+alias bb="cd ~/Code/betbright"
+# BetBright UI directory
+alias bbui="cd ~/Code/betbright/bb-design"
+# BetBright Vagrant directory
+alias bbvag="cd ~/Code/betbright/.neft/vagrant3"
+# Spostsbook_Web directory
+alias bbweb="cd ~/Code/betbright/sportsbook_web"
+# Spostsbook_Admin directory
+alias bbadm="cd ~/Code/betbright/sportsbook_admin"
+
+
+
 # Check the status of all repos in the current directory
 function check_repos() {
   find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git status -s && echo)' \;
@@ -31,8 +44,6 @@ ITL="\e[3m\]"
 PS1="$BLU\W$YLW$ITL\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"\")$YLW\$(git_branch)$RST » "
 
 
-# Better Vim
-alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 # Sass Watch and Update Shorthand
 alias sassw="sass --watch --sourcemap=none --no-cache"
 alias sassu="sass --update --sourcemap=none --no-cache"
