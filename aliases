@@ -1,0 +1,28 @@
+# Youtube Downloader
+alias yt='youtube-dl -f mp4'
+# Readable Files List
+alias ll="ls -lhG"
+# Remove all .DS_Store files
+alias dsclean="sudo find / -name '.DS_Store' -depth -exec rm {} \;"
+# Find IDs
+alias ackid="ack --css -i '#[-_a-z][-_a-z0-9]*(?=[^}]*\{)'"
+# Background Shorthand
+alias ackbg="ack --css -i 'background:\s*#[a-f0-9]*;'"
+# Find Unitted Zeroes
+alias ackzr="ack --css '\b0(px|r?em)'"
+# Find Decimal Pixel Values
+alias ackdc="ack --css '\d*\.\d*px'"
+
+# Dotfiles dir
+alias dot="cd ~/Code/.dotfiles"
+# Personal projets dir
+alias ff="cd ~/Code/filipesf"
+# Choco la Design dir
+alias cld="cd ~/Code/chocoladesign"
+# BetBright dir
+alias bb="cd ~/Code/betbright"
+alias bbvag="cd ~/Code/betbright/.neft/vagrant3"
+alias bbvagup="cd ~/Code/betbright/.neft/vagrant3; vagrant up; vagrant ssh"
+alias bbvagssh="cd ~/Code/betbright/.neft/vagrant3; vagrant ssh"
+alias bbweb="cd ~/Code/betbright/sportsbook_web"
+alias bbadm="cd ~/Code/betbright/sportsbook_admin"

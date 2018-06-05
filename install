@@ -1,11 +1,12 @@
 #!/bin/sh
 
 # REMOVE ORIGINAL FILES
-rm ~/.bashrc ~/.bash_profile ~/.gitconfig ~/.gitignore ~/.gitcommit ~/.vim ~/.vimrc ~/.ackrc ~/.editorconfig
+rm ~/.bashrc ~/.bash_profile ~/.aliases ~/.utils ~/.gitconfig ~/.gitignore ~/.gitcommit ~/.vim ~/.vimrc ~/.ackrc ~/.editorconfig
 
 # BASH
 echo "Creating Bash symlinks..."
 ln -s `pwd`/bashrc ~/.bashrc
+ln -s `pwd`/aliases ~/.aliases
 ln -s `pwd`/bash_profile ~/.bash_profile
 
 # GIT
@@ -26,3 +27,7 @@ ln -s `pwd`/ackrc ~/.ackrc
 # EditorConfig
 echo "Creating EditorConfig symlink..."
 ln -s `pwd`/editorconfig ~/.editorconfig
+
+# Utility Functions
+echo "Creating Utility Functions symlink..."
+ln -s `pwd`/utils ~/.utils
