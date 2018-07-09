@@ -19,8 +19,8 @@ alias dot="cd ~/Code/.dotfiles"
 alias ff="cd ~/Code/filipesf"
 # Choco la Design dir
 alias cld="cd ~/Code/chocoladesign"
-alias clds="cld;bundle exec jekyll serve --livereload --config '_config.yml,_config_dev.yml'"
-alias cldb="cld;JEKYLL_ENV='production' bundle exec jekyll build --config '_config.yml'; serve build"
+alias clds="cld;bundle exec jekyll serve --livereload --future --lsi --config '_config.yml,_config_dev.yml'"
+alias cldb="cld;JEKYLL_ENV='production' bundle exec jekyll build --future --profile --lsi"
 # BetBright dir
 alias bb="cd ~/Code/betbright"
 alias bbweb="bb;cd sportsbook_web"
