@@ -27,7 +27,6 @@ syntax enable
 filetype plugin on
 "Better syntax highlight
 colorscheme palenight
-set background=dark
 set termguicolors
 set guifont=Operator_Mono:h19
 "Italicised comments and attributes
