@@ -193,3 +193,10 @@ autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 "Change Emmet trigger to Tab
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
+
+
+"temporary fix
+"https://github.com/vim/vim/issues/3117
+if has('python3')
+  silent! python3 1
+endif
