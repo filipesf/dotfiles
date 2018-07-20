@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # REMOVE ORIGINAL FILES
-rm ~/.bashrc ~/.bash_profile ~/.aliases ~/.utils ~/.gitconfig ~/.gitignore ~/.gitcommit ~/.vim ~/.vimrc ~/.ackrc ~/.editorconfig
+rm ~/.bashrc ~/.bash_profile ~/.aliases ~/.utils ~/.gitconfig ~/.gitignore ~/.gitcommit ~/.vim ~/.vimrc ~/.gemrc ~/.ackrc ~/.editorconfig
 
 # BASH
 echo "Creating Bash symlinks..."
@@ -19,6 +19,10 @@ ln -s `pwd`/gitcommit ~/.gitcommit
 echo "Creating VIM symlinks..."
 ln -s `pwd`/vim ~/.vim
 ln -s `pwd`/vimrc ~/.vimrc
+
+# RUBY GEMS
+echo "Creating Gems symlink..."
+ln -s `pwd`/gemrc ~/.gemrc
 
 # Ack
 echo "Creating Ack symlink..."
