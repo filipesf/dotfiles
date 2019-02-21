@@ -38,6 +38,7 @@
   recap = log --oneline --no-merges --author=me@filipesf.com
   # See today’s work
   today = log --since=\"00:00:00\" --all --no-merges --oneline --author=me@filipesf.com
+  yesterday = log --since=\"1 day ago\" --all --no-merges --oneline --author=me@filipesf.com
   # Empty line between results from different files.
   find = "!git grep --break -C1"
   # Show your ten most recently checked out branches
