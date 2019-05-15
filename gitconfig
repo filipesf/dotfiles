@@ -36,6 +36,8 @@
   # Show simplified logs
   overview = log --oneline --no-merges
   recap = log --oneline --no-merges --author=me@filipesf.com
+  # Update remote branches list locally
+  refresh = remote update origin --prune
   # See today’s work
   today = log --since=\"00:00:00\" --all --no-merges --oneline --author=me@filipesf.com
   yesterday = log --since=\"1 day ago\" --all --no-merges --oneline --author=me@filipesf.com
