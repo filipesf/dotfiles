@@ -21,3 +21,7 @@ alias ff="cd ~/Code/filipesf"
 alias cld="cd ~/Code/chocoladesign"
 alias clds="cld;bundle exec jekyll serve --livereload --future --lsi --config '_config.yml,_config_dev.yml'"
 alias cldb="cld;JEKYLL_ENV='production' bundle exec jekyll build --future --profile --lsi"
+# UI Lab theme dir
+alias uis="cd ~/Code/uilab/; wp server"
+alias uil="cd ~/Code/uilab/wp-content/themes/uilab"
+alias uiw="cd ~/Code/uilab/wp-content/themes/uilab; yarn start"
