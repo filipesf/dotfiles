@@ -18,6 +18,7 @@ alias dot="cd ~/Code/.dotfiles"
 # Personal projets dir
 alias ff="cd ~/Code/filipesf"
 alias ffs="ff;bundle exec jekyll serve --livereload"
+alias ffd="ff;bundle exec jekyll build; gh-pages -d build -b master"
 # Choco la Design dir
 alias cld="cd ~/Code/chocoladesign"
 alias clds="cld;bundle exec jekyll serve --livereload --future --lsi --config '_config.yml,_config_dev.yml'"
