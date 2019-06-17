@@ -1,6 +1,13 @@
 # Packages files
 node_modules
-bower_components
+package-lock.json
+Gemfile.lock
+
+# Jekyll
+.bundle/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
 
 # System files
 _Store*

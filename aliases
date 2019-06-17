@@ -14,7 +14,7 @@ alias ackzr="ack --css '\b0(px|r?em)'"
 alias ackdc="ack --css '\d*\.\d*px'"
 
 # Dotfiles dir
-alias dot="cd ~/Code/.dotfiles"
+alias dot="cd ~/Code/dotfiles"
 # Personal projets dir
 alias ff="cd ~/Code/filipesf"
 alias ffs="ff;bundle exec jekyll serve --livereload"
