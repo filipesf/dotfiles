@@ -1,13 +1,18 @@
 #!/bin/sh
 
 # REMOVE ORIGINAL FILES
-rm ~/.bashrc ~/.bash_profile ~/.aliases ~/.utils ~/.gitconfig ~/.gitignore ~/.gitcommit ~/.vim ~/.vimrc ~/.gemrc ~/.ackrc ~/.editorconfig
+rm -rf ~/.bashrc ~/.bash_profile ~/.zshrc ~/.oh-my-zsh ~/.aliases ~/.utils ~/.gitconfig ~/.gitignore ~/.gitcommit ~/.vim ~/.vimrc ~/.gemrc ~/.ackrc ~/.editorconfig
 
 # BASH
 echo "Creating Bash symlinks..."
 ln -s `pwd`/bashrc ~/.bashrc
 ln -s `pwd`/aliases ~/.aliases
 ln -s `pwd`/bash_profile ~/.bash_profile
+
+# ZSH
+echo "Creating ZSH symlinks..."
+ln -s `pwd`/zshrc ~/.zshrc
+ln -s `pwd`/oh-my-zsh ~/.oh-my-zsh
 
 # GIT
 echo "Creating GIT symlinks..."
