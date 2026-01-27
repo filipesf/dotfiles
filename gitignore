@@ -23,3 +23,9 @@ Thumbs.db
 .netrwhist
 *.swo
 *.swp
+
+# Local overrides
+.gitconfig.local
+.zshrc.local
+.bashrc.local
+.aliases.local

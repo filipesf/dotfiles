@@ -40,3 +40,6 @@
 [submodule "vim/bundle/vim-typescript"]
 	path = vim/bundle/vim-typescript
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git

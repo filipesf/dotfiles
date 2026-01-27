@@ -1,0 +1,5 @@
+# Local, machine-specific config (this file is not tracked)
+# Example:
+# export VISERYA_DIR="$HOME/Code/viserya"
+# export CLICKMAX_DIR="$HOME/Code/clickmax/monorepo"
+# export VISERYA_CONSOLE_HOST="your.server.ip"

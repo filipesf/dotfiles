@@ -1,7 +1,5 @@
-[user]
-  name = Filipe Fernandes
-  email = me@filipesf.com
-	signingkey = 7E1C417509C4766E
+[include]
+  path = ~/.gitconfig.local
 [color]
   diff = auto
   status = auto
@@ -36,12 +34,12 @@
   graph = log --graph --decorate --stat --date=iso --all
   # Show simplified logs
   overview = log --oneline --no-merges
-  recap = log --oneline --no-merges --author=me@filipesf.com
+  recap = "!f() { git log --oneline --no-merges --author=\"$(git config user.email)\"; }; f"
   # Update remote branches list locally
   refresh = remote update origin --prune
   # See today’s work
-  today = log --since=\"00:00:00\" --all --no-merges --oneline --author=me@filipesf.com
-  yesterday = log --since=\"1 day ago\" --all --no-merges --oneline --author=me@filipesf.com
+  today = "!f() { git log --since=\"00:00:00\" --all --no-merges --oneline --author=\"$(git config user.email)\"; }; f"
+  yesterday = "!f() { git log --since=\"1 day ago\" --all --no-merges --oneline --author=\"$(git config user.email)\"; }; f"
   # Empty line between results from different files.
   find = "!git grep --break -C1"
   # Show your ten most recently checked out branches
@@ -54,7 +52,7 @@
   whitespace = warn
 [commit]
   template = ~/.gitcommit
-	gpgsign = true
+  gpgsign = true
 [push]
   default = current
 [diff]
@@ -68,10 +66,10 @@
 [ghi]
   token = !security find-internet-password -a filipesf -s github.com -l 'ghi token' -w
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [gpg "ssh"]
-	allowedSignersFile = /Users/filipefernandes/.ssh/allowed_signers
+  allowedSignersFile = ~/.ssh/allowed_signers
 [tag]
-	gpgSign = true
+  gpgSign = true
 [gpg]
 	program = gpg

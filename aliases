@@ -2,10 +2,25 @@
 # Shell entry point
 # ─────────────────────────────────────────────
 
-SHELL_DIR="$HOME/Code/dotfiles/shell"
+if [ -n "${ZSH_VERSION-}" ]; then
+  DOTFILES_FILE="${(%):-%x}"
+else
+  DOTFILES_FILE="${BASH_SOURCE[0]}"
+fi
+
+if command -v python3 >/dev/null 2>&1; then
+  DOTFILES_FILE="$(python3 -c 'import os,sys; print(os.path.realpath(sys.argv[1]))' "$DOTFILES_FILE")"
+fi
+
+DOTFILES_DIR="$(cd "$(dirname "$DOTFILES_FILE")" && pwd)"
+SHELL_DIR="$DOTFILES_DIR/shell"
 
 source "$SHELL_DIR/core.sh"
 source "$SHELL_DIR/general.sh"
 source "$SHELL_DIR/viserya.sh"
 source "$SHELL_DIR/afterroll.sh"
 source "$SHELL_DIR/clickmax.sh"
+
+if [ -f "$HOME/.aliases.local" ]; then
+  source "$HOME/.aliases.local"
+fi

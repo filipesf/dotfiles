@@ -15,7 +15,8 @@ dsclean() {
 }
 
 # Dotfiles
-alias dot="cd ~/Code/dotfiles"
+DOTFILES_DIR="${DOTFILES_DIR:-$HOME/Code/dotfiles}"
+alias dot="cd $DOTFILES_DIR"
 
 # Check the status of all repos in the current directory
 check_repos() {

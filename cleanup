@@ -16,9 +16,11 @@ done
 
 run() {
   if $DRY_RUN; then
-    echo "DRY → $*"
+    printf "DRY →"
+    printf " %q" "$@"
+    printf "\n"
   else
-    eval "$@"
+    "$@"
   fi
 }
 
@@ -29,8 +31,14 @@ size_of() {
 
 cleanup() {
   local path="$1"
+
+  if [ -z "$path" ] || [ "$path" = "/" ]; then
+    echo "→ Skipping unsafe path: $path"
+    return
+  fi
+
   echo "→ $path ($(size_of "$path"))"
-  run "rm -rf \"$path\"/* 2>/dev/null || true"
+  run sh -c 'rm -rf "$1"/* 2>/dev/null || true' _ "$path"
 }
 
 echo ""

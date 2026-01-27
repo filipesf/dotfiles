@@ -2,7 +2,10 @@
 # Viserya
 # ─────────────────────────────────────────────
 
-alias v="cd ~/Code/viserya"
+VISERYA_DIR="${VISERYA_DIR:-$HOME/Code/viserya}"
+VISERYA_SSH_KEY="${VISERYA_SSH_KEY:-$HOME/.ssh/do_key}"
+
+alias v="cd $VISERYA_DIR"
 alias vapp="v; cd viserya-app"
 alias vbot="v; cd viserya-bot"
 
@@ -20,7 +23,7 @@ _viserya_vtt_start() {
   local session="ViseryaVTT"
 
   tmux new-session -d -s "$session" -n "Foundry"
-  tmux send-keys -t "$session:Foundry" "cd ~/Code/viserya" C-m
+  tmux send-keys -t "$session:Foundry" "cd $VISERYA_DIR" C-m
   tmux send-keys -t "$session:Foundry" "ngrok http http://localhost:36111/" C-m
 
   tmux attach -t "$session"
@@ -40,11 +43,11 @@ _viserya_run_start() {
   local session="Viserya"
 
   tmux new-session -d -s "$session" -n "App"
-  tmux send-keys -t "$session:App" "cd ~/Code/viserya" C-m
+  tmux send-keys -t "$session:App" "cd $VISERYA_DIR" C-m
   tmux send-keys -t "$session:App" "npm run dev" C-m
 
   tmux new-window -t "$session" -n "Bot"
-  tmux send-keys -t "$session:Bot" "cd ~/Code/viserya" C-m
+  tmux send-keys -t "$session:Bot" "cd $VISERYA_DIR" C-m
   tmux send-keys -t "$session:Bot" "npm run bot" C-m
 
   tmux attach -t "$session"
@@ -65,4 +68,6 @@ vreset() {
   voff && sleep 1 && von
 }
 
-alias vconsole="ssh -i ~/.ssh/do_key root@24.199.90.52"
+if [ -n "${VISERYA_CONSOLE_HOST-}" ]; then
+  alias vconsole="ssh -i $VISERYA_SSH_KEY root@$VISERYA_CONSOLE_HOST"
+fi

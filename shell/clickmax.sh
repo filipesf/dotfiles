@@ -2,7 +2,9 @@
 # Clickmax
 # ─────────────────────────────────────────────
 
-alias cmax="cd ~/Code/clickmax/monorepo"
+CLICKMAX_DIR="${CLICKMAX_DIR:-$HOME/Code/clickmax/monorepo}"
+
+alias cmax="cd $CLICKMAX_DIR"
 
 alias cmaxb="cmax; pnpm install; pnpm build; pnpm denv pull"
 alias cmaxw="cmax; pnpm dep-down; pnpm dep-up; pnpm dev-web"
@@ -20,16 +22,16 @@ _clickmax_start() {
   local session="Clickmax"
 
   tmux new-session -d -s "$session" -n "Web"
-  tmux send-keys -t "$session:Web" "cd ~/Code/clickmax/monorepo" C-m
+  tmux send-keys -t "$session:Web" "cd $CLICKMAX_DIR" C-m
   tmux send-keys -t "$session:Web" "pnpm dep-down" C-m
   tmux send-keys -t "$session:Web" "pnpm dep-up" C-m
   tmux send-keys -t "$session:Web" "pnpm dev-web" C-m
 
   tmux new-window -t "$session" -n "Build"
-  tmux send-keys -t "$session:Build" "cd ~/Code/clickmax/monorepo" C-m
+  tmux send-keys -t "$session:Build" "cd $CLICKMAX_DIR" C-m
 
   tmux new-window -t "$session" -n "Shell"
-  tmux send-keys -t "$session:Shell" "cd ~/Code/clickmax/monorepo" C-m
+  tmux send-keys -t "$session:Shell" "cd $CLICKMAX_DIR" C-m
 
   tmux select-window -t "$session:Web"
   tmux attach -t "$session"

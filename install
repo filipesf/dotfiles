@@ -1,34 +1,67 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# REMOVE ORIGINAL FILES
-rm -rf ~/.bashrc ~/.bash_profile ~/.zshrc ~/.oh-my-zsh ~/.aliases ~/.utils ~/.gitconfig ~/.gitignore ~/.gitcommit ~/.vim ~/.vimrc ~/.gemrc ~/.ackrc ~/.editorconfig
+set -euo pipefail
 
-# BASH
-echo "Creating Bash symlinks..."
-ln -s `pwd`/bashrc ~/.bashrc
-ln -s `pwd`/aliases ~/.aliases
-ln -s `pwd`/bash_profile ~/.bash_profile
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
+BACKUP_DIR="$HOME/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
+SUBMODULES="non-vim"
 
-# ZSH
-echo "Creating ZSH symlinks..."
-ln -s `pwd`/zshrc ~/.zshrc
-ln -s `pwd`/oh-my-zsh ~/.oh-my-zsh
+for arg in "$@"; do
+  case "$arg" in
+    --submodules=all) SUBMODULES="all" ;;
+    --submodules=non-vim) SUBMODULES="non-vim" ;;
+    --submodules=none) SUBMODULES="none" ;;
+  esac
+done
 
-# GIT
-echo "Creating GIT symlinks..."
-ln -s `pwd`/gitconfig ~/.gitconfig
-ln -s `pwd`/gitignore ~/.gitignore
-ln -s `pwd`/gitcommit ~/.gitcommit
+backup_path() {
+  local path="$1"
 
-# VIM
-echo "Creating VIM symlinks..."
-ln -s `pwd`/vim ~/.vim
-ln -s `pwd`/vimrc ~/.vimrc
+  if [ -e "$path" ] || [ -L "$path" ]; then
+    mkdir -p "$BACKUP_DIR"
+    mv "$path" "$BACKUP_DIR/"
+  fi
+}
 
-# RUBY GEMS
-echo "Creating Gems symlink..."
-ln -s `pwd`/gemrc ~/.gemrc
+link() {
+  local src="$1"
+  local dst="$2"
 
-# EditorConfig
-echo "Creating EditorConfig symlink..."
-ln -s `pwd`/editorconfig ~/.editorconfig
+  backup_path "$dst"
+  ln -sfn "$src" "$dst"
+}
+
+echo "Creating symlinks (backups in $BACKUP_DIR when needed)..."
+
+echo "Bash..."
+link "$DOTFILES_DIR/bashrc" "$HOME/.bashrc"
+link "$DOTFILES_DIR/aliases" "$HOME/.aliases"
+link "$DOTFILES_DIR/bash_profile" "$HOME/.bash_profile"
+
+echo "Zsh..."
+link "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
+link "$DOTFILES_DIR/oh-my-zsh" "$HOME/.oh-my-zsh"
+
+echo "Git..."
+link "$DOTFILES_DIR/gitconfig" "$HOME/.gitconfig"
+link "$DOTFILES_DIR/gitignore" "$HOME/.gitignore"
+link "$DOTFILES_DIR/gitcommit" "$HOME/.gitcommit"
+
+echo "Vim..."
+link "$DOTFILES_DIR/vim" "$HOME/.vim"
+link "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
+
+echo "RubyGems..."
+link "$DOTFILES_DIR/gemrc" "$HOME/.gemrc"
+
+echo "EditorConfig..."
+link "$DOTFILES_DIR/editorconfig" "$HOME/.editorconfig"
+
+if [ "$SUBMODULES" != "none" ]; then
+  echo "Submodules..."
+  if [ "$SUBMODULES" = "all" ]; then
+    git -C "$DOTFILES_DIR" submodule update --init --recursive
+  else
+    git -C "$DOTFILES_DIR" submodule update --init --recursive oh-my-zsh
+  fi
+fi

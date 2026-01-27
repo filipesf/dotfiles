@@ -24,3 +24,7 @@ ITL="\e[3m\]"
 
 # Set prompt config
 PS1="$GRN\u$RST$ITL in $BLU\W$YLW$ITL\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"$RST$ITL on\")$YLW\$(git_branch)$RST\n» "
+
+if [ -f "$HOME/.bashrc.local" ]; then
+  source "$HOME/.bashrc.local"
+fi

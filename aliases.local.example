@@ -1,0 +1,3 @@
+# Local, machine-specific aliases (this file is not tracked)
+# Example:
+# alias vconsole='ssh -i ~/.ssh/do_key root@your.server.ip'
