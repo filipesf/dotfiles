@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/filipesf/.oh-my-zsh"
+export ZSH="/Users/filipefernandes/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -100,17 +100,21 @@ source $ZSH/oh-my-zsh.sh
 
 # Load utility functions
 source ~/.aliases
-source ~/.utils
 
 # Paths configuration
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/ruby/lib"
-export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/usr/local/homebrew/opt/ruby/bin:$PATH"
+export LDFLAGS="-L/usr/local/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/homebrew/opt/ruby/include"
 
 # Enable CLI Colours
 export CLICOLOR=1
 
 # Set Vim as default editor
 export EDITOR=vim
+
+# Added by Windsurf
+export PATH="/Users/filipefernandes/.codeium/windsurf/bin:$PATH"
+
+export PATH="/Users/filipefernandes/.local/bin:$PATH"

@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+DRY_RUN=false
+NO_NODE=false
+NO_DOCKER=false
+
+for arg in "$@"; do
+  case "$arg" in
+    --dry-run) DRY_RUN=true ;;
+    --no-node) NO_NODE=true ;;
+    --no-docker) NO_DOCKER=true ;;
+  esac
+done
+
+run() {
+  if $DRY_RUN; then
+    echo "DRY → $*"
+  else
+    eval "$@"
+  fi
+}
+
+size_of() {
+  local path="$1"
+  [[ -d "$path" ]] && du -sh "$path" 2>/dev/null | awk '{print $1}' || echo "0B"
+}
+
+cleanup() {
+  local path="$1"
+  echo "→ $path ($(size_of "$path"))"
+  run "rm -rf \"$path\"/* 2>/dev/null || true"
+}
+
+echo ""
+echo "🧹 macOS Cleanup"
+echo "================"
+$DRY_RUN && echo "🧪 Dry-run enabled"
+$NO_NODE && echo "🚫 Node cleanup disabled"
+$NO_DOCKER && echo "🚫 Docker cleanup disabled"
+echo ""
+
+echo "📊 Disk usage BEFORE:"
+df -h /
+
+echo ""
+echo "📂 macOS caches & temp"
+cleanup "$HOME/Library/Caches"
+cleanup "/Library/Caches"
+cleanup "/private/var/tmp"
+cleanup "/private/var/folders"
+
+echo ""
+echo "📜 Logs"
+cleanup "$HOME/Library/Logs"
+cleanup "$HOME/Library/Logs/DiagnosticReports"
+
+echo ""
+echo "✉️ Attachments"
+cleanup "$HOME/Library/Containers/com.apple.mail/Data/Library/Mail Downloads"
+cleanup "$HOME/Library/Messages/Attachments"
+
+echo ""
+echo "🧑‍💻 Xcode"
+cleanup "$HOME/Library/Developer/Xcode/DerivedData"
+cleanup "$HOME/Library/Developer/Xcode/Archives"
+
+echo ""
+echo "🗑 Trash"
+cleanup "$HOME/.Trash"
+
+# -----------------------
+# Node / JS tooling
+# -----------------------
+if ! $NO_NODE; then
+  echo ""
+  echo "📦 Node / JS tooling"
+  command -v npm >/dev/null && run "npm cache clean --force"
+  command -v yarn >/dev/null && run "yarn cache clean"
+  command -v pnpm >/dev/null && run "pnpm store prune"
+
+  cleanup "$HOME/.npm"
+  cleanup "$HOME/.yarn"
+  cleanup "$HOME/.pnpm-store"
+fi
+
+# -----------------------
+# Homebrew
+# -----------------------
+echo ""
+echo "🍺 Homebrew"
+if command -v brew >/dev/null; then
+  run "brew cleanup --prune=all"
+  run "brew autoremove"
+else
+  echo "→ Not installed"
+fi
+
+# -----------------------
+# Docker
+# -----------------------
+if ! $NO_DOCKER; then
+  echo ""
+  echo "🐳 Docker"
+  if command -v docker >/dev/null; then
+    run "docker system prune -af"
+    run "docker volume prune -f"
+  else
+    echo "→ Not installed"
+  fi
+fi
+
+echo ""
+echo "📊 Disk usage AFTER:"
+df -h /
+
+echo ""
+echo "✅ Cleanup complete."

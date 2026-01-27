@@ -1,6 +1,7 @@
 [user]
   name = Filipe Fernandes
   email = me@filipesf.com
+	signingkey = 7E1C417509C4766E
 [color]
   diff = auto
   status = auto
@@ -53,6 +54,7 @@
   whitespace = warn
 [commit]
   template = ~/.gitcommit
+	gpgsign = true
 [push]
   default = current
 [diff]
@@ -65,3 +67,11 @@
   user = souzaff
 [ghi]
   token = !security find-internet-password -a filipesf -s github.com -l 'ghi token' -w
+[init]
+	defaultBranch = main
+[gpg "ssh"]
+	allowedSignersFile = /Users/filipefernandes/.ssh/allowed_signers
+[tag]
+	gpgSign = true
+[gpg]
+	program = gpg

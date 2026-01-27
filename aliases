@@ -1,29 +1,11 @@
-# Youtube Downloader
-alias yt='youtube-dl -f mp4'
-# Readable Files List
-alias ll="ls -lhG"
-# Remove all .DS_Store files
-alias dsclean="sudo find / -name '.DS_Store' -depth -exec rm {} \;"
-# Find IDs
-alias ackid="ack --css -i '#[-_a-z][-_a-z0-9]*(?=[^}]*\{)'"
-# Background Shorthand
-alias ackbg="ack --css -i 'background:\s*#[a-f0-9]*;'"
-# Find Unitted Zeroes
-alias ackzr="ack --css '\b0(px|r?em)'"
-# Find Decimal Pixel Values
-alias ackdc="ack --css '\d*\.\d*px'"
+# ─────────────────────────────────────────────
+# Shell entry point
+# ─────────────────────────────────────────────
 
-# Dotfiles dir
-alias dot="cd ~/Code/dotfiles"
-# Personal projets dir
-alias ff="cd ~/Code/filipesf"
-alias ffs="ff;bundle exec jekyll serve --livereload"
-alias ffd="ff;bundle exec jekyll build; gh-pages -d build -b master"
-# Choco la Design dir
-alias cld="cd ~/Code/chocoladesign"
-alias clds="cld;bundle exec jekyll serve --livereload --future --incremental --lsi --config '_config.yml,_config_dev.yml'"
-alias cldb="cld;JEKYLL_ENV='production' bundle exec jekyll build --future --profile --lsi"
-# UI Lab theme dir
-alias uis="cd ~/Code/uilab/; wp server"
-alias uil="cd ~/Code/uilab/wp-content/themes/uilab"
-alias uiw="cd ~/Code/uilab/wp-content/themes/uilab; yarn start"
+SHELL_DIR="$HOME/Code/dotfiles/shell"
+
+source "$SHELL_DIR/core.sh"
+source "$SHELL_DIR/general.sh"
+source "$SHELL_DIR/viserya.sh"
+source "$SHELL_DIR/afterroll.sh"
+source "$SHELL_DIR/clickmax.sh"

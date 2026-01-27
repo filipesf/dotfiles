@@ -29,14 +29,6 @@ ln -s `pwd`/vimrc ~/.vimrc
 echo "Creating Gems symlink..."
 ln -s `pwd`/gemrc ~/.gemrc
 
-# Ack
-echo "Creating Ack symlink..."
-ln -s `pwd`/ackrc ~/.ackrc
-
 # EditorConfig
 echo "Creating EditorConfig symlink..."
 ln -s `pwd`/editorconfig ~/.editorconfig
-
-# Utility Functions
-echo "Creating Utility Functions symlink..."
-ln -s `pwd`/utils ~/.utils
