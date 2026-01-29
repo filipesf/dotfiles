@@ -55,10 +55,8 @@ _viserya_run_start() {
 
 # HARD stop (⚠️ destructive)
 voff() {
-  if confirm "Kill ALL node, next-server and tmux processes?"; then
-    pkill -9 node
-    pkill -9 next-server
-    pkill -9 tmux
+  if confirm "Kill tmux session: Viserya?"; then
+    tmux kill-session -t Viserya 2>/dev/null
   else
     echo "Aborted."
   fi

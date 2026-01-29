@@ -39,6 +39,7 @@ _clickmax_start() {
 
 cmaxoff() {
   if confirm "Kill tmux session: Clickmax?"; then
+    (cd "$CLICKMAX_DIR" && pnpm dep-down)
     tmux kill-session -t Clickmax 2>/dev/null
   else
     echo "Aborted."

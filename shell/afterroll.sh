@@ -40,6 +40,7 @@ _afterroll_start() {
 
 aroff() {
   if confirm "Kill tmux session: Afterroll?"; then
+    (cd "$AFTERROLL_DIR" && npm run db:stop)
     tmux kill-session -t Afterroll 2>/dev/null
   else
     echo "Aborted."
