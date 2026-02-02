@@ -1,23 +1,44 @@
-# ─────────────────────────────────────────────
+# ----------------------------------------------------------------------------#
 # Clickmax
-# ─────────────────────────────────────────────
+# ----------------------------------------------------------------------------#
 
 CLICKMAX_DIR="${CLICKMAX_DIR:-$HOME/Code/clickmax/monorepo}"
 
+# ----------------------------------------------------------------------------#
+# Aliases
+# ----------------------------------------------------------------------------#
+
+# Change directory to Clickmax
 alias cmax="cd $CLICKMAX_DIR"
 
+# Install dependencies and build Clickmax
 alias cmaxb="cmax; pnpm install; pnpm build; pnpm denv pull"
-alias cmaxw="cmax; pnpm dep-down; pnpm dep-up; pnpm dev-web"
 
 # Start / attach Clickmax tmux session
+alias cmaxw="cmax; pnpm dep-down; pnpm dep-up; pnpm dev-web"
+
+# ----------------------------------------------------------------------------#
+# Functions
+# ----------------------------------------------------------------------------#
+
+# Start / attach Clickmax tmux session
+# @description Start or attach Clickmax tmux session
+# @example cmaxon
 cmaxon() {
   tmux_attach_or_run "Clickmax" _clickmax_start
 }
 
+# Start Clickmax tmux session
+# @description Start Clickmax tmux session
+# @example cmaxatt
 cmaxatt() {
   cmaxon
 }
 
+# Start Clickmax tmux session
+# @description Start Clickmax tmux session and run commands
+# @param {string} session - tmux session name
+# @param {function} callback - function to run after session is started
 _clickmax_start() {
   local session="Clickmax"
 
@@ -30,13 +51,13 @@ _clickmax_start() {
   tmux new-window -t "$session" -n "Build"
   tmux send-keys -t "$session:Build" "cd $CLICKMAX_DIR" C-m
 
-  tmux new-window -t "$session" -n "Shell"
-  tmux send-keys -t "$session:Shell" "cd $CLICKMAX_DIR" C-m
-
   tmux select-window -t "$session:Web"
   tmux attach -t "$session"
 }
 
+# Kill Clickmax tmux session
+# @description Kill Clickmax tmux session
+# @example cmaxoff
 cmaxoff() {
   if confirm "Kill tmux session: Clickmax?"; then
     (cd "$CLICKMAX_DIR" && pnpm dep-down)
@@ -46,6 +67,10 @@ cmaxoff() {
   fi
 }
 
+# Kill and start Clickmax tmux session
+# @description Kill and start Clickmax tmux session
+# @example cmaxreset
 cmaxreset() {
   cmaxoff && sleep 1 && cmaxon
 }
+
