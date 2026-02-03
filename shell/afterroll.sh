@@ -2,7 +2,7 @@
 # Afterroll
 # ------------------------------------------------------------------------------
 
-AFTEROLL_DIR="${AFTEROLL_DIR:-$VISERYA_DIR/afterroll}"
+AFTERROLL_DIR="${AFTERROLL_DIR:-$VISERYA_DIR/afterroll}"
 
 # ------------------------------------------------------------------------------
 # Shortcuts

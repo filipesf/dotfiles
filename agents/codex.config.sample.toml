@@ -1,0 +1,54 @@
+# Model
+model = "gpt-5.1-codex-mini"
+model_reasoning_effort = "medium"
+suppress_unstable_features_warning = true
+personality = "pragmatic"
+model_personality = "pragmatic"
+
+# Features
+[features]
+unified_exec = true
+collab = true
+apps = true
+
+[mcp_servers]
+
+# MCP Docker
+[mcp_servers.docker]
+command = "docker"
+args = ["mcp", "gateway", "run"]
+enabled = false
+
+# MCP Figma
+[mcp_servers.figma]
+url = "http://127.0.0.1:3845/mcp"
+enabled = true
+
+# MCP Shadcn
+[mcp_servers.shadcn]
+command = "npx"
+args = ["shadcn@latest", "mcp"]
+
+# MCP Supabase
+[mcp_servers.supabase]
+url = "http://127.0.0.1:54321/mcp"
+
+# MCP Linear
+[mcp_servers.linear]
+url = "https://mcp.linear.app/mcp"
+
+# MCP Context7
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+startup_timeout_sec = 60
+
+[projects."/Users/filipefernandes/Code/dotfiles"]
+trust_level = "trusted"
+
+[projects."/Users/filipefernandes/Code/viserya/afterroll"]
+trust_level = "trusted"
+
+[notice.model_migrations]
+"gpt-5.1-codex-mini" = "gpt-5.2-codex"
+

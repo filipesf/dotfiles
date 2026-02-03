@@ -54,6 +54,37 @@ link "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
 echo "RubyGems..."
 link "$DOTFILES_DIR/gemrc" "$HOME/.gemrc"
 
+echo "LLMs..."
+LLM_AGENTS=("agents" "codex" "gemini" "claude")
+LLM_DIRS=("agents" "get-shit-done" "hooks" "prompts" "skills")
+
+for agent in "${LLM_AGENTS[@]}"; do
+  agent_home="$HOME/.${agent}"
+  backup_path "$agent_home"
+  mkdir -p "$agent_home"
+
+  for dir in "${LLM_DIRS[@]}"; do
+    src="$DOTFILES_DIR/agents/$dir"
+    if [ -e "$src" ] || [ -L "$src" ]; then
+      link "$src" "$agent_home/$dir"
+    fi
+  done
+
+  if [ "$agent" = "codex" ]; then
+    link "$DOTFILES_DIR/agents/codex.config.sample.toml" "$agent_home/config.toml"
+  elif [ "$agent" = "claude" ]; then
+    link "$DOTFILES_DIR/agents/claude.settings.sample.json" "$agent_home/settings.json"
+  elif [ "$agent" = "gemini" ]; then
+    link "$DOTFILES_DIR/agents/gemini.settings.sample.json" "$agent_home/settings.json"
+  fi
+
+  if [ "$agent" = "claude" ]; then
+    link "$DOTFILES_DIR/agents/SYSTEM.md" "$agent_home/CLAUDE.md"
+  else
+    link "$DOTFILES_DIR/agents/SYSTEM.md" "$agent_home/AGENTS.md"
+  fi
+done
+
 echo "EditorConfig..."
 link "$DOTFILES_DIR/editorconfig" "$HOME/.editorconfig"
 

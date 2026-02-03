@@ -1,0 +1,149 @@
+{
+  "version": 3,
+  "skills": {
+    "docs-sync": {
+      "source": "openai/openai-agents-js",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/openai/openai-agents-js.git",
+      "skillPath": ".codex/skills/docs-sync/SKILL.md",
+      "skillFolderHash": "a734babad2f35c431f446b031771f6c92bf96fa0",
+      "installedAt": "2026-02-01T05:15:23.925Z",
+      "updatedAt": "2026-02-01T05:15:23.925Z"
+    },
+    "frontend-design": {
+      "source": "everyinc/compound-engineering-plugin",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/everyinc/compound-engineering-plugin.git",
+      "skillPath": "plugins/compound-engineering/skills/frontend-design/SKILL.md",
+      "skillFolderHash": "159294a7d04be2f3b355988e4569580a20cb7718",
+      "installedAt": "2026-02-01T05:19:42.898Z",
+      "updatedAt": "2026-02-01T05:22:42.198Z"
+    },
+    "architecture": {
+      "source": "vudovn/antigravity-kit",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vudovn/antigravity-kit.git",
+      "skillPath": ".agent/skills/architecture/SKILL.md",
+      "skillFolderHash": "ccca9d3e42e28b76a1c56f70ba77fc417f2f5546",
+      "installedAt": "2026-02-01T05:21:50.528Z",
+      "updatedAt": "2026-02-01T05:21:50.528Z"
+    },
+    "supabase-postgres-best-practices": {
+      "source": "supabase/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/supabase/agent-skills.git",
+      "skillPath": "skills/supabase-postgres-best-practices/SKILL.md",
+      "skillFolderHash": "7c50bf619d9332176007f593d99046d3c1fbebe2",
+      "installedAt": "2026-02-01T05:25:31.945Z",
+      "updatedAt": "2026-02-01T05:25:31.945Z"
+    },
+    "github-issue-triage": {
+      "source": "code-yeongyu/oh-my-opencode",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/code-yeongyu/oh-my-opencode.git",
+      "skillPath": ".opencode/skills/github-issue-triage/SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-02-01T21:28:18.372Z",
+      "updatedAt": "2026-02-02T21:52:24.146Z"
+    },
+    "ralph": {
+      "source": "yeachan-heo/oh-my-claudecode",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/yeachan-heo/oh-my-claudecode.git",
+      "skillPath": "skills/ralph/SKILL.md",
+      "skillFolderHash": "a01c4b6be4c08930ba557c55882a6eabad06d4ca",
+      "installedAt": "2026-02-02T21:43:51.181Z",
+      "updatedAt": "2026-02-02T21:43:51.181Z"
+    },
+    "prd": {
+      "source": "snarktank/ralph",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/snarktank/ralph.git",
+      "skillPath": "skills/prd/SKILL.md",
+      "skillFolderHash": "a4e8fd92a25b3c8ab08f66cc7e6eedbde658a843",
+      "installedAt": "2026-02-02T21:44:59.331Z",
+      "updatedAt": "2026-02-02T21:44:59.331Z"
+    },
+    "n8n-validation-expert": {
+      "source": "czlonkowski/n8n-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/czlonkowski/n8n-skills.git",
+      "skillPath": "skills/n8n-validation-expert/SKILL.md",
+      "skillFolderHash": "d6dc012b09d87d0d6cdd77101e2172d865c9e8fb",
+      "installedAt": "2026-02-02T22:34:32.914Z",
+      "updatedAt": "2026-02-02T22:34:32.914Z"
+    },
+    "n8n-expression-syntax": {
+      "source": "czlonkowski/n8n-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/czlonkowski/n8n-skills.git",
+      "skillPath": "skills/n8n-expression-syntax/SKILL.md",
+      "skillFolderHash": "c144430fa657fa145ea14edef443b856e6cd5a69",
+      "installedAt": "2026-02-02T22:34:32.935Z",
+      "updatedAt": "2026-02-02T22:34:32.935Z"
+    },
+    "n8n-code-python": {
+      "source": "czlonkowski/n8n-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/czlonkowski/n8n-skills.git",
+      "skillPath": "skills/n8n-code-python/SKILL.md",
+      "skillFolderHash": "98ab4e7289bf2d47bb0f0f1aab722d8c46c8d128",
+      "installedAt": "2026-02-02T22:34:32.951Z",
+      "updatedAt": "2026-02-02T22:34:32.951Z"
+    },
+    "n8n-node-configuration": {
+      "source": "czlonkowski/n8n-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/czlonkowski/n8n-skills.git",
+      "skillPath": "skills/n8n-node-configuration/SKILL.md",
+      "skillFolderHash": "9f8abe850e5f4f95d95aaf348b68d63eb4eef717",
+      "installedAt": "2026-02-02T22:34:32.970Z",
+      "updatedAt": "2026-02-02T22:34:32.970Z"
+    },
+    "n8n-code-javascript": {
+      "source": "czlonkowski/n8n-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/czlonkowski/n8n-skills.git",
+      "skillPath": "skills/n8n-code-javascript/SKILL.md",
+      "skillFolderHash": "c4f553cb6d020ff10e60218c945c686e9779240a",
+      "installedAt": "2026-02-02T22:34:33.078Z",
+      "updatedAt": "2026-02-02T22:34:33.078Z"
+    },
+    "n8n-mcp-tools-expert": {
+      "source": "czlonkowski/n8n-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/czlonkowski/n8n-skills.git",
+      "skillPath": "skills/n8n-mcp-tools-expert/SKILL.md",
+      "skillFolderHash": "9d96475d56169380bb31c4756390707692616c1f",
+      "installedAt": "2026-02-02T22:34:33.098Z",
+      "updatedAt": "2026-02-02T22:34:33.098Z"
+    },
+    "implement-design": {
+      "source": "figma/mcp-server-guide",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/figma/mcp-server-guide.git",
+      "skillPath": "skills/implement-design/SKILL.md",
+      "skillFolderHash": "d067a8156ba4f4a28f6fc44904c2adebc2bb5920",
+      "installedAt": "2026-02-02T22:40:26.111Z",
+      "updatedAt": "2026-02-02T22:41:13.496Z"
+    },
+    "create-design-system-rules": {
+      "source": "figma/mcp-server-guide",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/figma/mcp-server-guide.git",
+      "skillPath": "skills/create-design-system-rules/SKILL.md",
+      "skillFolderHash": "0e2edc58ae141f3e53a5894d1217d202170fb2b2",
+      "installedAt": "2026-02-02T22:42:06.482Z",
+      "updatedAt": "2026-02-02T22:42:06.482Z"
+    }
+  },
+  "dismissed": {},
+  "lastSelectedAgents": [
+    "claude-code",
+    "codex",
+    "gemini-cli",
+    "github-copilot",
+    "opencode",
+    "windsurf"
+  ]
+}

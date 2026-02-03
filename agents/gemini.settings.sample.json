@@ -1,0 +1,22 @@
+{
+  "context": { "fileName": "AGENTS.md" },
+  "security": { "auth": { "selectedType": "oauth-personal" } },
+  "ui": { "theme": "GitHub" },
+  "general": {
+    "enableAutoUpdate": true,
+    "previewFeatures": true
+  },
+  "tools": { "shell": { "showColor": true } },
+  "experimental": { "enableAgents": true },
+  "agents": {
+    "overrides": {}
+  },
+  "mcpServers": {
+    "docker": { "command": "docker", "args": ["mcp", "gateway", "run"] },
+    "shadcn": { "command": "npx", "args": ["shadcn@latest", "mcp"] },
+    "context7": { "command": "npx", "args": ["-y", "@upstash/context7-mcp"] },
+    "figma": { "url": "http://127.0.0.1:3845/mcp" },
+    "linear": { "url": "https://mcp.linear.app/mcp" },
+    "supabase": { "url": "http://127.0.0.1:54321/mcp" }
+  }
+}
